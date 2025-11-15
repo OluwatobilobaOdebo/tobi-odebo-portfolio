@@ -1,9 +1,8 @@
 import "./globals.css";
-import Link from "next/link";
 
 export const metadata = {
-  title: "Tobi Odebo | Portfolio",
-  description: "Software Engineer • AI • Analytics • Product",
+  title: "Tobi Odebo | Product Manager & Software Engineer",
+  description: "Product Manager and Software Engineer passionate about building impactful digital experiences. Specializing in full-stack development, data analytics, and AI.",
 };
 
 export default function RootLayout({
@@ -13,17 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-black">
-        <nav className="w-full border-b p-5 flex gap-6 text-lg">
-          <Link href="/" className="font-semibold">
-            Home
-          </Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-        </nav>
-        <main className="p-5 max-w-5xl mx-auto">{children}</main>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
