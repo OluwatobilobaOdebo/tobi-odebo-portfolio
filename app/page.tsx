@@ -1,5 +1,7 @@
 "use client";
 
+import type React from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -212,7 +214,7 @@ export default function Home() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2-2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
+                    d="M5 12h14M5 12a2 2 0 00-2-2V6a2 2 0 002-2h14a2 2 0 002 2v4a2 2 0 00-2 2M5 12a2 2 0 00-2-2v10m-6 0a2 2 0 012-2h2a2 2 0 012 2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2m-2-4h.01M17 16h.01"
                   />
                 </svg>
               </div>
@@ -342,10 +344,10 @@ export default function Home() {
               <ProjectCard
                 title="Full-Stack E-Commerce Platform"
                 description="Complete e-commerce solution"
-                image="/ecommerce-platform-interface.png"
+                image="/my-ecommerce-platform-interface.png"
                 isActive={activeProject === "ecommerce"}
                 onClick={() => setActiveProject("ecommerce")}
-                comingSoon
+                link="https://fullstack-ecommerce-site-tawny.vercel.app/"
               />
               <ProjectCard
                 title="SaaS Subscription App Starter"
@@ -659,6 +661,7 @@ interface ProjectCardProps {
   isActive: boolean;
   onClick: () => void;
   comingSoon?: boolean;
+  link?: string;
 }
 
 function ProjectCard({
@@ -668,6 +671,7 @@ function ProjectCard({
   isActive,
   onClick,
   comingSoon,
+  link,
 }: ProjectCardProps) {
   return (
     <div
@@ -690,11 +694,22 @@ function ProjectCard({
         <h4 className="text-base md:text-lg font-semibold mb-2 uppercase tracking-wide text-balance">
           {title}
         </h4>
-        {comingSoon && (
+        {link ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-auto px-4 md:px-6 py-2 border-2 border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors uppercase text-xs md:text-sm tracking-wide inline-flex items-center justify-center gap-2"
+            onClick={(e) => e.stopPropagation()}
+          >
+            View Project
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+        ) : comingSoon ? (
           <button className="mt-auto px-4 md:px-6 py-2 border-2 border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors uppercase text-xs md:text-sm tracking-wide">
             Coming Soon
           </button>
-        )}
+        ) : null}
       </div>
     </div>
   );

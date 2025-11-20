@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Mail, Send } from "lucide-react";
+import { Mail, Send } from 'lucide-react';
 
 export default function Contact() {
   const [isSpinning, setIsSpinning] = useState(false);
@@ -11,12 +11,10 @@ export default function Contact() {
     name: "",
     email: "",
     subject: "",
-    message: "",
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleProfileClick = () => {
     setIsSpinning(true);
@@ -54,15 +52,13 @@ export default function Contact() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="fixed top-0 left-0 right-0 z-50 py-3 md:py-4 bg-background/80 backdrop-blur-lg shadow-sm">
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link
-            href="/"
-            onClick={handleProfileClick}
-            className={`w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-border hover:border-primary transition-colors ${
-              isSpinning ? "animate-spin-once" : ""
-            }`}
+          <Link 
+            href="/" 
+            onClick={handleProfileClick} 
+            className={`w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-border hover:border-primary transition-colors ${isSpinning ? 'animate-spin-once' : ''}`}
           >
             <Image
-              src="/Me.jpeg"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Me-PMHdaPanPkCSPaEvN9ME6GlB0FrYaC.jpeg"
               alt="Tobi Odebo"
               width={48}
               height={48}
@@ -96,12 +92,9 @@ export default function Contact() {
       <div className="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">
-              Get In Touch
-            </h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">Get In Touch</h1>
             <p className="text-base md:text-lg text-muted-foreground">
-              Have a question or want to work together? Fill out the form below
-              and I'll get back to you as soon as possible.
+              Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible.
             </p>
           </div>
 
@@ -115,9 +108,7 @@ export default function Contact() {
                 id="name"
                 required
                 value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
                 placeholder="Your name"
               />
@@ -132,19 +123,14 @@ export default function Contact() {
                 id="email"
                 required
                 value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
                 placeholder="your.email@example.com"
               />
             </div>
 
             <div>
-              <label
-                htmlFor="subject"
-                className="block text-sm font-medium mb-2"
-              >
+              <label htmlFor="subject" className="block text-sm font-medium mb-2">
                 Subject
               </label>
               <input
@@ -152,19 +138,14 @@ export default function Contact() {
                 id="subject"
                 required
                 value={formData.subject}
-                onChange={(e) =>
-                  setFormData({ ...formData, subject: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                 className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
                 placeholder="What's this about?"
               />
             </div>
 
             <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium mb-2"
-              >
+              <label htmlFor="message" className="block text-sm font-medium mb-2">
                 Message
               </label>
               <textarea
@@ -172,9 +153,7 @@ export default function Contact() {
                 required
                 rows={6}
                 value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none text-sm md:text-base"
                 placeholder="Tell me more about your project or inquiry..."
               />
@@ -188,8 +167,7 @@ export default function Contact() {
 
             {submitStatus === "error" && (
               <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-600">
-                Failed to send message. Please try again or email me directly at
-                tobiodebo4@gmail.com
+                Failed to send message. Please try again or email me directly at tobiodebo4@gmail.com
               </div>
             )}
 
@@ -210,9 +188,7 @@ export default function Contact() {
           </form>
 
           <div className="mt-8 md:mt-12 pt-8 md:pt-12 border-t border-border text-center">
-            <p className="text-muted-foreground mb-4 text-sm md:text-base">
-              Or reach me directly at:
-            </p>
+            <p className="text-muted-foreground mb-4 text-sm md:text-base">Or reach me directly at:</p>
             <a
               href="mailto:tobiodebo4@gmail.com"
               className="inline-flex items-center gap-2 text-primary hover:underline text-base md:text-lg"
