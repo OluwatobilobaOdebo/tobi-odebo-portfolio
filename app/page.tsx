@@ -352,7 +352,7 @@ export default function Home() {
               <ProjectCard
                 title="SaaS Subscription App Starter"
                 description="SaaS application template"
-                image="/modern-saas-dashboard.png"
+                image="/image-coming-soon-placeholder-1.png"
                 isActive={activeProject === "saas"}
                 onClick={() => setActiveProject("saas")}
                 comingSoon
@@ -360,7 +360,7 @@ export default function Home() {
               <ProjectCard
                 title="Real-Time Chat App"
                 description="Real-time messaging application"
-                image="/chat-messaging-interface.jpg"
+                image="/image-coming-soon-placeholder-1.png"
                 isActive={activeProject === "chat"}
                 onClick={() => setActiveProject("chat")}
                 comingSoon
@@ -378,7 +378,7 @@ export default function Home() {
               <ProjectCard
                 title="Customer Onboarding Redesign for a B2C App"
                 description="Onboarding experience redesign"
-                image="/mobile-onboarding-screens.jpg"
+                image="/image-coming-soon-placeholder-1.png"
                 isActive={activeProject === "onboarding"}
                 onClick={() => setActiveProject("onboarding")}
                 comingSoon
@@ -386,7 +386,7 @@ export default function Home() {
               <ProjectCard
                 title="Mobile App Feature Redesign (End-to-End Case Study)"
                 description="Feature redesign case study"
-                image="/mobile-app-redesign-mockups.jpg"
+                image="/image-coming-soon-placeholder-1.png"
                 isActive={activeProject === "mobile-redesign"}
                 onClick={() => setActiveProject("mobile-redesign")}
                 comingSoon
@@ -394,7 +394,7 @@ export default function Home() {
               <ProjectCard
                 title="Product Strategy for a New AI Productivity Tool"
                 description="AI tool product strategy"
-                image="/ai-productivity-dashboard.jpg"
+                image="/image-coming-soon-placeholder-1.png"
                 isActive={activeProject === "ai-strategy"}
                 onClick={() => setActiveProject("ai-strategy")}
                 comingSoon
@@ -412,7 +412,7 @@ export default function Home() {
               <ProjectCard
                 title="End-to-End Data Pipeline + Analytics System"
                 description="Complete data pipeline"
-                image="/data-pipeline-architecture.png"
+                image="/image-coming-soon-placeholder-1.png"
                 isActive={activeProject === "pipeline"}
                 onClick={() => setActiveProject("pipeline")}
                 comingSoon
@@ -420,7 +420,7 @@ export default function Home() {
               <ProjectCard
                 title="Sales Forecasting with Time Series"
                 description="Time series forecasting"
-                image="/sales-forecasting-charts.jpg"
+                image="/image-coming-soon-placeholder-1.png"
                 isActive={activeProject === "forecasting"}
                 onClick={() => setActiveProject("forecasting")}
                 comingSoon
@@ -428,7 +428,7 @@ export default function Home() {
               <ProjectCard
                 title="Fraud Detection Analytics"
                 description="Fraud detection system"
-                image="/fraud-detection-dashboard.png"
+                image="/image-coming-soon-placeholder-1.png"
                 isActive={activeProject === "fraud"}
                 onClick={() => setActiveProject("fraud")}
                 comingSoon
@@ -457,7 +457,8 @@ export default function Home() {
               title="Google Project Management Professional Certificate"
               provider="Google / Coursera"
               status="In Progress"
-              icon="📋"
+              image="/google-project-management-professional.jpg"
+              imageClassName="-ml-2 md:-ml-6"
             />
             <CertificationCard
               title={
@@ -469,25 +470,19 @@ export default function Home() {
               }
               provider="Scrum Alliance"
               status="Scheduled: Nov 22-23"
-              icon="🎯"
+              image="/certified-scrummaster.png"
             />
             <CertificationCard
               title="Certified Scrum Product Owner (CSPO)"
               provider="Scrum Alliance"
               status="Scheduled: Nov 24-25"
-              icon="📊"
+              image="/certified-scrum-product-owner.png"
             />
             <CertificationCard
               title="IBM AI Product Manager Professional Certificate"
               provider="IBM / Coursera"
               status="Planned"
-              icon="🤖"
-            />
-            <CertificationCard
-              title="Google Data Analytics Professional Certificate"
-              provider="Google / Coursera"
-              status="Planned"
-              icon="📈"
+              image="/ibm-ai-product-manager-professional.jpg"
             />
           </div>
         </div>
@@ -720,18 +715,31 @@ interface CertificationCardProps {
   title: string | React.ReactNode;
   provider: string;
   status: string;
-  icon: string;
+  image: string;
+  imageClassName?: string;
 }
 
 function CertificationCard({
   title,
   provider,
   status,
-  icon,
+  image,
+  imageClassName,
 }: CertificationCardProps) {
   return (
     <div className="p-4 md:p-6 bg-card rounded-xl md:rounded-2xl border border-border hover:border-primary transition-all duration-300 hover:shadow-lg group">
-      <div className="text-3xl md:text-4xl mb-3 md:mb-4">{icon}</div>
+      <div
+        className={`mb-3 md:mb-4 w-16 h-16 md:w-20 md:h-20 relative ${
+          imageClassName || ""
+        }`}
+      >
+        <Image
+          src={image || "/placeholder.svg"}
+          alt={typeof title === "string" ? title : "Certification"}
+          fill
+          className="object-contain"
+        />
+      </div>
       <h4 className="text-lg md:text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
         {title}
       </h4>
