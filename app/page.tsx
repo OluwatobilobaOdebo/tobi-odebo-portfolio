@@ -1,61 +1,52 @@
-"use client";
+"use client"
 
-import type React from "react";
+import type React from "react"
 
-import Image from "next/image";
-import Link from "next/link";
-import {
-  ArrowUpRight,
-  Github,
-  Linkedin,
-  Mail,
-  FileText,
-  Download,
-} from "lucide-react";
-import { useState, useEffect } from "react";
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowUpRight, Github, Linkedin, Mail, FileText, Download, ChevronDown } from "lucide-react"
+import { useState, useEffect } from "react"
 
 export default function Home() {
-  const [activeProject, setActiveProject] = useState<string | null>(null);
-  const [scrolled, setScrolled] = useState(false);
-  const [resumeVisible, setResumeVisible] = useState(false);
-  const [isSpinning, setIsSpinning] = useState(false);
+  const [activeProject, setActiveProject] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
+  const [resumeVisible, setResumeVisible] = useState(false)
+  const [isSpinning, setIsSpinning] = useState(false)
 
   const handleProfileClick = () => {
-    setIsSpinning(true);
-    setTimeout(() => setIsSpinning(false), 600);
-  };
+    setIsSpinning(true)
+    setTimeout(() => setIsSpinning(false), 600)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 20)
 
-      const resumeSection = document.getElementById("resume");
+      const resumeSection = document.getElementById("resume")
       if (resumeSection) {
-        const rect = resumeSection.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        const rect = resumeSection.getBoundingClientRect()
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0
         if (isVisible && !resumeVisible) {
-          setResumeVisible(true);
+          setResumeVisible(true)
         }
       }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [resumeVisible]);
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [resumeVisible])
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
+    const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth" })
     }
-  };
+  }
 
   return (
     <div className="bg-background text-foreground">
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "py-3 md:py-4 bg-background/80 backdrop-blur-lg shadow-sm"
-            : "py-4 md:py-6 bg-transparent"
+          scrolled ? "py-3 md:py-4 bg-background/80 backdrop-blur-lg shadow-sm" : "py-4 md:py-6 bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -66,13 +57,7 @@ export default function Home() {
               isSpinning ? "animate-spin-once" : ""
             }`}
           >
-            <Image
-              src="/Me.jpeg"
-              alt="Tobi Odebo"
-              width={48}
-              height={48}
-              className="object-cover w-full h-full"
-            />
+            <Image src="/Me.jpeg" alt="Tobi Odebo" width={48} height={48} className="object-cover w-full h-full" />
           </Link>
 
           <nav className="flex items-center gap-1 bg-card/50 backdrop-blur-sm rounded-full px-1 md:px-2 py-1.5 md:py-2 border border-border">
@@ -104,16 +89,13 @@ export default function Home() {
         className="min-h-screen flex flex-col items-center justify-center text-center px-4 md:px-6 relative pt-20"
       >
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 text-balance">
-            Hey, I'm Tobi Odebo
-          </h1>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 text-balance">Hey, I'm Tobi Odebo</h1>
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-3 md:mb-4 leading-relaxed">
             Product Manager • Software Engineer • Data Analytics Enthusiast
           </p>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            I build products that solve real problems and create delightful user
-            experiences. From AI-powered tools to full-stack applications, I'm
-            passionate about turning ideas into reality.
+            I build products that solve real problems and create delightful user experiences. From AI-powered tools to
+            full-stack applications, I'm passionate about turning ideas into reality.
           </p>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 mt-8 md:mt-10 justify-center">
@@ -134,24 +116,16 @@ export default function Home() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center p-2">
-            <div className="w-1.5 h-3 bg-muted-foreground rounded-full"></div>
-          </div>
+          <ChevronDown className="w-8 h-8 text-muted-foreground" />
         </div>
       </section>
 
       {/* ===================== SKILLS SECTION ===================== */}
-      <section
-        id="skills"
-        className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30"
-      >
+      <section id="skills" className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">
-            Technical Skills
-          </h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">Technical Skills</h2>
           <p className="text-base md:text-lg text-muted-foreground text-center mb-12 md:mb-16 max-w-2xl mx-auto px-4">
-            A versatile toolkit spanning product management, software
-            engineering, and data analytics
+            A versatile toolkit spanning product management, software engineering, and data analytics
           </p>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
@@ -160,9 +134,7 @@ export default function Home() {
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <FileText className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold mb-3">
-                Product Management
-              </h3>
+              <h3 className="text-xl md:text-2xl font-semibold mb-3">Product Management</h3>
               <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                 <li>• Product Strategy & Roadmapping</li>
                 <li>• User Research & Analysis</li>
@@ -175,12 +147,7 @@ export default function Home() {
             {/* Frontend & Backend */}
             <div className="p-6 md:p-8 bg-card rounded-2xl border border-border hover:border-primary transition-colors">
               <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-accent"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -189,9 +156,7 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold mb-3">
-                Frontend & Backend
-              </h3>
+              <h3 className="text-xl md:text-2xl font-semibold mb-3">Frontend & Backend</h3>
               <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                 <li>• Angular</li>
                 <li>• TypeScript</li>
@@ -204,12 +169,7 @@ export default function Home() {
             {/* DevOps & Tools */}
             <div className="p-6 md:p-8 bg-card rounded-2xl border border-border hover:border-primary transition-colors">
               <div className="w-12 h-12 bg-chart-2/10 rounded-lg flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-chart-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                <svg className="w-6 h-6 text-chart-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -218,9 +178,7 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold mb-3">
-                DevOps & Tools
-              </h3>
+              <h3 className="text-xl md:text-2xl font-semibold mb-3">DevOps & Tools</h3>
               <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                 <li>• Docker & Kubernetes</li>
                 <li>• Git & GitHub</li>
@@ -233,12 +191,7 @@ export default function Home() {
             {/* Data & Analytics */}
             <div className="p-6 md:p-8 bg-card rounded-2xl border border-border hover:border-primary transition-colors">
               <div className="w-12 h-12 bg-chart-1/10 rounded-lg flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-chart-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                <svg className="w-6 h-6 text-chart-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -247,9 +200,7 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold mb-3">
-                Data & Analytics
-              </h3>
+              <h3 className="text-xl md:text-2xl font-semibold mb-3">Data & Analytics</h3>
               <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                 <li>• SQL & Database Design</li>
                 <li>• Python (Pandas, NumPy)</li>
@@ -262,12 +213,7 @@ export default function Home() {
             {/* Testing & Quality */}
             <div className="p-6 md:p-8 bg-card rounded-2xl border border-border hover:border-primary transition-colors">
               <div className="w-12 h-12 bg-chart-3/10 rounded-lg flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-chart-3"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                <svg className="w-6 h-6 text-chart-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -276,9 +222,7 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold mb-3">
-                Testing & Quality
-              </h3>
+              <h3 className="text-xl md:text-2xl font-semibold mb-3">Testing & Quality</h3>
               <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                 <li>• Playwright & Cypress</li>
                 <li>• Jasmine & Karma</li>
@@ -291,12 +235,7 @@ export default function Home() {
             {/* Cloud & Infrastructure */}
             <div className="p-6 md:p-8 bg-card rounded-2xl border border-border hover:border-primary transition-colors">
               <div className="w-12 h-12 bg-chart-4/10 rounded-lg flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-chart-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                <svg className="w-6 h-6 text-chart-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -305,9 +244,7 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold mb-3">
-                Cloud & Infrastructure
-              </h3>
+              <h3 className="text-xl md:text-2xl font-semibold mb-3">Cloud & Infrastructure</h3>
               <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                 <li>• RESTful APIs</li>
                 <li>• Microservices Architecture</li>
@@ -321,17 +258,11 @@ export default function Home() {
       </section>
 
       {/* ===================== PROJECTS SECTION ===================== */}
-      <section
-        id="projects"
-        className="py-16 md:py-24 px-4 md:px-6 bg-background"
-      >
+      <section id="projects" className="py-16 md:py-24 px-4 md:px-6 bg-background">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">
-            Projects
-          </h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">Projects</h2>
           <p className="text-base md:text-lg text-muted-foreground text-center mb-12 md:mb-16 max-w-2xl mx-auto px-4">
-            A selection of work across software engineering, product management,
-            and data analytics
+            A selection of work across software engineering, product management, and data analytics
           </p>
 
           {/* Software Engineering Projects */}
@@ -376,27 +307,27 @@ export default function Home() {
             </h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               <ProjectCard
+                title="AI Meeting Preparation Assistant for Google Calendar"
+                description="AI-powered meeting prep tool"
+                image="/image-coming-soon-placeholder-1.png"
+                isActive={activeProject === "ai-meeting-prep"}
+                onClick={() => setActiveProject("ai-meeting-prep")}
+                link="/google-calendar"
+              />
+              <ProjectCard
+                title="Marketplace MVP (Two-Sided Platform)"
+                description="Two-sided marketplace platform"
+                image="/image-coming-soon-placeholder-1.png"
+                isActive={activeProject === "marketplace-mvp"}
+                onClick={() => setActiveProject("marketplace-mvp")}
+                comingSoon
+              />
+              <ProjectCard
                 title="Customer Onboarding Redesign for a B2C App"
                 description="Onboarding experience redesign"
                 image="/image-coming-soon-placeholder-1.png"
                 isActive={activeProject === "onboarding"}
                 onClick={() => setActiveProject("onboarding")}
-                comingSoon
-              />
-              <ProjectCard
-                title="Mobile App Feature Redesign (End-to-End Case Study)"
-                description="Feature redesign case study"
-                image="/image-coming-soon-placeholder-1.png"
-                isActive={activeProject === "mobile-redesign"}
-                onClick={() => setActiveProject("mobile-redesign")}
-                comingSoon
-              />
-              <ProjectCard
-                title="Product Strategy for a New AI Productivity Tool"
-                description="AI tool product strategy"
-                image="/image-coming-soon-placeholder-1.png"
-                isActive={activeProject === "ai-strategy"}
-                onClick={() => setActiveProject("ai-strategy")}
                 comingSoon
               />
             </div>
@@ -439,17 +370,12 @@ export default function Home() {
       </section>
 
       {/* ===================== CERTIFICATIONS SECTION ===================== */}
-      <section
-        id="certifications"
-        className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30"
-      >
+      <section id="certifications" className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">
-            Certifications
-          </h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">Certifications</h2>
           <p className="text-base md:text-lg text-muted-foreground text-center mb-12 md:mb-16 max-w-2xl mx-auto px-4">
-            Continuous learning and professional development in product
-            management, agile methodologies, and data analytics
+            Continuous learning and professional development in product management, agile methodologies, and data
+            analytics
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -489,32 +415,23 @@ export default function Home() {
       </section>
 
       {/* ===================== RESUME SECTION ===================== */}
-      <section
-        id="resume"
-        className="py-16 md:py-24 px-4 md:px-6 bg-background"
-      >
+      <section id="resume" className="py-16 md:py-24 px-4 md:px-6 bg-background">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">
-            Resume
-          </h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">Resume</h2>
           <p className="text-base md:text-lg text-muted-foreground text-center mb-8 md:mb-12 max-w-2xl mx-auto px-4">
             View or download my complete professional resume
           </p>
 
           <div
             className={`transition-all duration-1000 ${
-              resumeVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
+              resumeVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
             <div className="bg-card border border-border rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 md:p-4 bg-secondary/50 border-b border-border gap-3">
                 <div className="flex items-center gap-2">
                   <FileText className="w-4 md:w-5 h-4 md:h-5 text-primary flex-shrink-0" />
-                  <span className="font-medium text-sm md:text-base truncate">
-                    Oluwatobiloba_Odebo_Resume.pdf
-                  </span>
+                  <span className="font-medium text-sm md:text-base truncate">Oluwatobiloba_Odebo_Resume.pdf</span>
                 </div>
                 <a
                   href="/Oluwatobiloba_Odebo_Resume.pdf"
@@ -527,11 +444,7 @@ export default function Home() {
               </div>
 
               <div className="aspect-[8.5/11] relative">
-                <iframe
-                  src="/Oluwatobiloba_Odebo_Resume.pdf"
-                  className="w-full h-full"
-                  title="Resume PDF"
-                />
+                <iframe src="/Oluwatobiloba_Odebo_Resume.pdf" className="w-full h-full" title="Resume PDF" />
               </div>
             </div>
           </div>
@@ -539,17 +452,12 @@ export default function Home() {
       </section>
 
       {/* ===================== CONTACT SECTION ===================== */}
-      <section
-        id="contact"
-        className="py-16 md:py-24 px-4 md:px-6 bg-background"
-      >
+      <section id="contact" className="py-16 md:py-24 px-4 md:px-6 bg-background">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
-            Let's Build Something Great
-          </h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">Let's Build Something Great</h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 md:mb-12 leading-relaxed max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, collaborations, or
-            just chatting about product and technology. Feel free to reach out!
+            I'm always open to discussing new opportunities, collaborations, or just chatting about product and
+            technology. Feel free to reach out!
           </p>
 
           {/* Email button */}
@@ -571,43 +479,26 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8 md:mb-12 text-center px-4">
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground italic">
-              "The biggest adventure you can ever take is to live the life of
-              your dreams."
+              "The biggest adventure you can ever take is to live the life of your dreams."
             </p>
-            <p className="text-base md:text-lg text-muted-foreground mt-2">
-              — Mark Twain
-            </p>
+            <p className="text-base md:text-lg text-muted-foreground mt-2">— Mark Twain</p>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12">
             {/* Quick Links */}
             <div className="text-center">
-              <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">
-                Quick Links
-              </h3>
+              <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Quick Links</h3>
               <div className="flex flex-wrap gap-x-4 md:gap-x-6 gap-y-2 justify-center text-sm md:text-base">
-                <a
-                  href="#skills"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <a href="#skills" className="text-muted-foreground hover:text-foreground transition-colors">
                   Skills
                 </a>
-                <a
-                  href="#projects"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <a href="#projects" className="text-muted-foreground hover:text-foreground transition-colors">
                   Projects
                 </a>
-                <a
-                  href="#certifications"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <a href="#certifications" className="text-muted-foreground hover:text-foreground transition-colors">
                   Certifications
                 </a>
-                <a
-                  href="#contact"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
                   Contact
                 </a>
               </div>
@@ -615,9 +506,7 @@ export default function Home() {
 
             {/* Connect */}
             <div className="text-center">
-              <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">
-                Connect
-              </h3>
+              <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Connect</h3>
               <div className="flex gap-3 md:gap-4 justify-center">
                 <a
                   href="https://github.com/OluwatobilobaOdebo"
@@ -646,35 +535,25 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  );
+  )
 }
 
 interface ProjectCardProps {
-  title: string;
-  description: string;
-  image: string;
-  isActive: boolean;
-  onClick: () => void;
-  comingSoon?: boolean;
-  link?: string;
+  title: string
+  description: string
+  image: string
+  isActive: boolean
+  onClick: () => void
+  comingSoon?: boolean
+  link?: string
 }
 
-function ProjectCard({
-  title,
-  description,
-  image,
-  isActive,
-  onClick,
-  comingSoon,
-  link,
-}: ProjectCardProps) {
+function ProjectCard({ title, description, image, isActive, onClick, comingSoon, link }: ProjectCardProps) {
   return (
     <div
       onClick={onClick}
       className={`group cursor-pointer rounded-xl md:rounded-2xl overflow-hidden transition-all duration-300 border-2 bg-card flex flex-col ${
-        isActive
-          ? "border-primary shadow-xl"
-          : "border-border hover:border-primary/50 hover:shadow-lg"
+        isActive ? "border-primary shadow-xl" : "border-border hover:border-primary/50 hover:shadow-lg"
       }`}
     >
       <div className="aspect-[4/3] relative overflow-hidden bg-secondary">
@@ -686,9 +565,7 @@ function ProjectCard({
         />
       </div>
       <div className="p-4 md:p-6 bg-card flex flex-col flex-1">
-        <h4 className="text-base md:text-lg font-semibold mb-2 uppercase tracking-wide text-balance">
-          {title}
-        </h4>
+        <h4 className="text-base md:text-lg font-semibold mb-2 uppercase tracking-wide text-balance">{title}</h4>
         {link ? (
           <a
             href={link}
@@ -707,32 +584,22 @@ function ProjectCard({
         ) : null}
       </div>
     </div>
-  );
+  )
 }
 
 // Certification Card Component
 interface CertificationCardProps {
-  title: string | React.ReactNode;
-  provider: string;
-  status: string;
-  image: string;
-  imageClassName?: string;
+  title: string | React.ReactNode
+  provider: string
+  status: string
+  image: string
+  imageClassName?: string
 }
 
-function CertificationCard({
-  title,
-  provider,
-  status,
-  image,
-  imageClassName,
-}: CertificationCardProps) {
+function CertificationCard({ title, provider, status, image, imageClassName }: CertificationCardProps) {
   return (
     <div className="p-4 md:p-6 bg-card rounded-xl md:rounded-2xl border border-border hover:border-primary transition-all duration-300 hover:shadow-lg group">
-      <div
-        className={`mb-3 md:mb-4 w-16 h-16 md:w-20 md:h-20 relative ${
-          imageClassName || ""
-        }`}
-      >
+      <div className={`mb-3 md:mb-4 w-16 h-16 md:w-20 md:h-20 relative ${imageClassName || ""}`}>
         <Image
           src={image || "/placeholder.svg"}
           alt={typeof title === "string" ? title : "Certification"}
@@ -740,13 +607,9 @@ function CertificationCard({
           className="object-contain"
         />
       </div>
-      <h4 className="text-lg md:text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-        {title}
-      </h4>
-      <p className="text-sm md:text-base text-muted-foreground mb-2">
-        {provider}
-      </p>
+      <h4 className="text-lg md:text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{title}</h4>
+      <p className="text-sm md:text-base text-muted-foreground mb-2">{provider}</p>
       <p className="text-xs md:text-sm text-primary font-medium">{status}</p>
     </div>
-  );
+  )
 }
