@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import type React from "react"
-import Image from "next/image"
+import type React from "react";
+import Image from "next/image";
 import {
   ArrowUpRight,
   FileText,
@@ -13,43 +13,43 @@ import {
   Phone,
   Briefcase,
   GraduationCap,
-} from "lucide-react"
-import { useState, useEffect } from "react"
+} from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false)
-  const [isSpinning, setIsSpinning] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [isSpinning, setIsSpinning] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const header = document.querySelector("header")
+      const header = document.querySelector("header");
       if (header) {
-        const headerBottom = header.offsetTop + header.offsetHeight
-        const isScrolledPast = window.scrollY > headerBottom
-        setScrolled(isScrolledPast)
+        const headerBottom = header.offsetTop + header.offsetHeight;
+        const isScrolledPast = window.scrollY > headerBottom;
+        setScrolled(isScrolledPast);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleProfileClick = () => {
-    setIsSpinning(true)
-    setTimeout(() => setIsSpinning(false), 1000)
-  }
+    setIsSpinning(true);
+    setTimeout(() => setIsSpinning(false), 1000);
+  };
 
   const scrollToSection = (id: string) => {
     if (id === "hero") {
-      window.scrollTo({ top: 0, behavior: "smooth" })
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      const element = document.getElementById(id)
+      const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" })
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -57,7 +57,9 @@ export default function Home() {
 
       <header
         className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled ? "top-0 py-3 md:py-4 shadow-lg mb-8" : "top-0 md:top-6 py-4 md:py-6 mb-12 md:mb-16 bg-transparent"
+          scrolled
+            ? "top-0 py-3 md:py-4 shadow-lg mb-8"
+            : "top-0 md:top-6 py-4 md:py-6 mb-12 md:mb-16 bg-transparent"
         }`}
         style={scrolled ? { background: "rgba(180, 83, 9, 0.975)" } : {}}
       >
@@ -65,8 +67,8 @@ export default function Home() {
           <div className="flex items-center">
             <button
               onClick={(e) => {
-                e.preventDefault()
-                scrollToSection("hero")
+                e.preventDefault();
+                scrollToSection("hero");
               }}
               className="kill-link-style cursor-pointer"
             >
@@ -83,8 +85,8 @@ export default function Home() {
               <a
                 href="#about"
                 onClick={(e) => {
-                  e.preventDefault()
-                  scrollToSection("about")
+                  e.preventDefault();
+                  scrollToSection("about");
                 }}
                 className="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
@@ -93,8 +95,8 @@ export default function Home() {
               <a
                 href="#projects"
                 onClick={(e) => {
-                  e.preventDefault()
-                  scrollToSection("projects")
+                  e.preventDefault();
+                  scrollToSection("projects");
                 }}
                 className="inline-block animate__animated animate__fadeInDown kill-link-style delay2 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
@@ -103,8 +105,8 @@ export default function Home() {
               <a
                 href="#timeline"
                 onClick={(e) => {
-                  e.preventDefault()
-                  scrollToSection("timeline")
+                  e.preventDefault();
+                  scrollToSection("timeline");
                 }}
                 className="inline-block animate__animated animate__fadeInDown kill-link-style delay3 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
@@ -113,8 +115,8 @@ export default function Home() {
               <a
                 href="#contact"
                 onClick={(e) => {
-                  e.preventDefault()
-                  scrollToSection("contact")
+                  e.preventDefault();
+                  scrollToSection("contact");
                 }}
                 className="inline-block animate__animated animate__fadeInDown kill-link-style delay4 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
@@ -143,7 +145,8 @@ export default function Home() {
           <div className="relative z-10 w-full px-4 md:px-8 lg:px-12 flex items-end md:items-start pb-32 md:pb-0 md:pt-20 min-h-screen">
             <div className="text-left max-w-[280px] md:max-w-sm lg:max-w-md xl:max-w-lg">
               <h1 className="animate__animated animate__fadeInUp text-xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                Hi, I'm Tobi — welcome to my portfolio. I build intuitive, impactful digital solutions.
+                Hi, I'm Tobi — welcome to my portfolio. I build intuitive,
+                impactful digital solutions.
               </h1>
             </div>
           </div>
@@ -158,8 +161,9 @@ export default function Home() {
         <section className="py-16 md:py-24 px-4 md:px-6 bg-white">
           <div className="max-w-5xl mx-auto text-center">
             <div className="text-3xl lg:text-5xl font-extrabold text-gray-900">
-              Here, you can check out what I'm working on. My interests are product management, programming, analytics,
-              and AI. My work lies at the intersection of these subjects.
+              Here, you can check out what I'm working on. My interests are
+              product management, programming, analytics, and AI. My work lies
+              at the intersection of these subjects.
             </div>
           </div>
         </section>
@@ -169,32 +173,42 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <div className="flex flex-col md:flex-row gap-6 md:gap-16">
               <div className="md:w-1/4 flex-shrink-0">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">About:</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+                  About:
+                </h2>
               </div>
               <div className="md:w-3/4">
                 <div className="space-y-4 md:space-y-6 text-base md:text-lg leading-relaxed text-white">
                   <p>
-                    I'm Tobi Odebo — a technologist, analyst, and product-minded builder who enjoys turning ideas into
-                    practical, high-impact solutions. My experience spans software engineering and data analytics, and
-                    I'm drawn to product management because it sits at the intersection of problem-solving, user
+                    I'm Tobi Odebo — a technologist, analyst, and product-minded
+                    builder who enjoys turning ideas into practical, high-impact
+                    solutions. My experience spans software engineering and data
+                    analytics, and I'm drawn to product management because it
+                    sits at the intersection of problem-solving, user
                     understanding, and strategic decision-making.
                   </p>
                   <p>
-                    Across my engineering work, I've been most energized by figuring out what to build, why it matters,
-                    and how it should work. I like breaking down complex challenges, uncovering user needs, and shaping
-                    clear product direction supported by data and experimentation. Whether I'm building AI tools,
-                    full-stack applications, or analytics systems, I approach each project with the mindset of creating
-                    value, not just writing code.
+                    Across my engineering work, I've been most energized by
+                    figuring out what to build, why it matters, and how it
+                    should work. I like breaking down complex challenges,
+                    uncovering user needs, and shaping clear product direction
+                    supported by data and experimentation. Whether I'm building
+                    AI tools, full-stack applications, or analytics systems, I
+                    approach each project with the mindset of creating value,
+                    not just writing code.
                   </p>
                   <p>
-                    I'm also entrepreneurial by nature. I enjoy exploring new venture ideas — from AI-powered tools to
-                    remote tax services to future real estate projects — and thinking in terms of long-term vision,
-                    execution, and scalability.
+                    I'm also entrepreneurial by nature. I enjoy exploring new
+                    venture ideas — from AI-powered tools to remote tax services
+                    to future real estate projects — and thinking in terms of
+                    long-term vision, execution, and scalability.
                   </p>
                   <p>
-                    Outside of work, I focus on fitness, personal development, and building meaningful relationships.
-                    I'm driven by growth, consistency, and the belief that every project is an opportunity to learn and
-                    create something better than before.
+                    Outside of work, I focus on fitness, personal development,
+                    and building meaningful relationships. I'm driven by growth,
+                    consistency, and the belief that every project is an
+                    opportunity to learn and create something better than
+                    before.
                   </p>
                 </div>
               </div>
@@ -205,7 +219,9 @@ export default function Home() {
         {/* ===================== SKILLS SECTION ===================== */}
         <section id="skills" className="py-16 md:py-24 px-4 md:px-6 bg-white">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">Technical Skills</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">
+              Technical Skills
+            </h2>
 
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
               {/* Product Management */}
@@ -213,7 +229,9 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <FileText className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-semibold mb-3">Product Management</h3>
+                <h3 className="text-xl md:text-2xl font-semibold mb-3">
+                  Product Management
+                </h3>
                 <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                   <li>• Product Strategy & Roadmapping</li>
                   <li>• User Research & Analysis</li>
@@ -226,7 +244,12 @@ export default function Home() {
               {/* Frontend & Backend */}
               <div className="p-6 md:p-8 bg-card rounded-2xl border border-border hover:border-primary transition-colors">
                 <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="w-6 h-6 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -235,7 +258,9 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl md:text-2xl font-semibold mb-3">Frontend & Backend</h3>
+                <h3 className="text-xl md:text-2xl font-semibold mb-3">
+                  Frontend & Backend
+                </h3>
                 <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                   <li>• Angular</li>
                   <li>• TypeScript</li>
@@ -248,7 +273,12 @@ export default function Home() {
               {/* DevOps & Tools */}
               <div className="p-6 md:p-8 bg-card rounded-2xl border border-border hover:border-primary transition-colors">
                 <div className="w-12 h-12 bg-chart-2/10 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-chart-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="w-6 h-6 text-chart-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -257,7 +287,9 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl md:text-2xl font-semibold mb-3">DevOps & Tools</h3>
+                <h3 className="text-xl md:text-2xl font-semibold mb-3">
+                  DevOps & Tools
+                </h3>
                 <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                   <li>• Docker & Kubernetes</li>
                   <li>• Git & GitHub</li>
@@ -270,7 +302,12 @@ export default function Home() {
               {/* Data & Analytics */}
               <div className="p-6 md:p-8 bg-card rounded-2xl border border-border hover:border-primary transition-colors">
                 <div className="w-12 h-12 bg-chart-1/10 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-chart-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="w-6 h-6 text-chart-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -279,7 +316,9 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl md:text-2xl font-semibold mb-3">Data & Analytics</h3>
+                <h3 className="text-xl md:text-2xl font-semibold mb-3">
+                  Data & Analytics
+                </h3>
                 <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                   <li>• SQL & Database Design</li>
                   <li>• Python (Pandas, NumPy)</li>
@@ -292,7 +331,12 @@ export default function Home() {
               {/* Testing & Quality */}
               <div className="p-6 md:p-8 bg-card rounded-2xl border border-border hover:border-primary transition-colors">
                 <div className="w-12 h-12 bg-chart-3/10 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-chart-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="w-6 h-6 text-chart-3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -301,7 +345,9 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl md:text-2xl font-semibold mb-3">Testing & Quality</h3>
+                <h3 className="text-xl md:text-2xl font-semibold mb-3">
+                  Testing & Quality
+                </h3>
                 <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                   <li>• Playwright & Cypress</li>
                   <li>• Jasmine & Karma</li>
@@ -314,7 +360,12 @@ export default function Home() {
               {/* Cloud & Infrastructure */}
               <div className="p-6 md:p-8 bg-card rounded-2xl border border-border hover:border-primary transition-colors">
                 <div className="w-12 h-12 bg-chart-4/10 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-chart-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="w-6 h-6 text-chart-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -323,7 +374,9 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl md:text-2xl font-semibold mb-3">Cloud & Infrastructure</h3>
+                <h3 className="text-xl md:text-2xl font-semibold mb-3">
+                  Cloud & Infrastructure
+                </h3>
                 <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                   <li>• RESTful APIs</li>
                   <li>• Microservices Architecture</li>
@@ -337,9 +390,14 @@ export default function Home() {
         </section>
 
         {/* ===================== PROJECTS SECTION ===================== */}
-        <section id="projects" className="py-16 md:py-24 px-4 md:px-6 bg-gray-900">
+        <section
+          id="projects"
+          className="py-16 md:py-24 px-4 md:px-6 bg-gray-900"
+        >
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center text-white">Projects</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center text-white">
+              Projects
+            </h2>
 
             {/* Software Engineering Projects */}
             <div className="mb-12 md:mb-16">
@@ -446,9 +504,14 @@ export default function Home() {
         </section>
 
         {/* ===================== CERTIFICATIONS SECTION ===================== */}
-        <section id="certifications" className="py-16 md:py-24 px-4 md:px-6 bg-white">
+        <section
+          id="certifications"
+          className="py-16 md:py-24 px-4 md:px-6 bg-white"
+        >
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">Certifications</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">
+              Certifications
+            </h2>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               <CertificationCard
@@ -495,7 +558,10 @@ export default function Home() {
         </section>
 
         {/* ===================== TIMELINE SECTION ===================== */}
-        <section id="timeline" className="py-16 md:py-24 px-4 md:px-6 bg-gray-900">
+        <section
+          id="timeline"
+          className="py-16 md:py-24 px-4 md:px-6 bg-gray-900"
+        >
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-12 md:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
@@ -513,32 +579,49 @@ export default function Home() {
                 <div className="relative flex flex-col md:flex-row items-center gap-8">
                   <div className="md:w-1/2 md:pr-12">
                     <div className="bg-blue-500 rounded-lg p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/50 hover:border-2 hover:border-white">
-                      <h3 className="text-xl font-bold text-white mb-2">Associate Software Engineer</h3>
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        Associate Software Engineer
+                      </h3>
                       <h4 className="text-lg text-blue-100 mb-3">Optum</h4>
-                      <p className="text-sm text-blue-50 mb-4">🔧 Angular, Node.js, TypeScript, SQL, Playwright</p>
+                      <p className="text-sm text-blue-50 mb-4">
+                        🔧 Angular, Node.js, TypeScript, SQL, Playwright
+                      </p>
                       <p className="text-blue-50 text-sm">
-                        Built and maintained OT Fin app with Angular/Node.js/TypeScript, standardizing UI across
-                        financial workflows. Led Angular/Material migrations, resolved Elastic APM errors, and built
-                        Playwright automation test suites to reduce manual regression effort.
+                        Built and maintained OT Fin app with
+                        Angular/Node.js/TypeScript, standardizing UI across
+                        financial workflows. Led Angular/Material migrations,
+                        resolved Elastic APM errors, and built Playwright
+                        automation test suites to reduce manual regression
+                        effort.
                       </p>
                     </div>
                   </div>
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-500 rounded-full border-4 border-gray-900 flex items-center justify-center z-10 hidden md:flex">
                     <Briefcase className="w-6 h-6 text-white" />
                   </div>
-                  <div className="md:w-1/2 md:pl-12 text-white text-lg font-medium">July 2023 - October 2025</div>
+                  <div className="md:w-1/2 md:pl-12 text-white text-lg font-medium">
+                    July 2023 - October 2025
+                  </div>
                 </div>
 
                 {/* Technology Development Associate - Optum */}
                 <div className="relative flex flex-col md:flex-row-reverse items-center gap-8">
                   <div className="md:w-1/2 md:pl-12">
                     <div className="bg-blue-500 rounded-lg p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/50 hover:border-2 hover:border-white">
-                      <h3 className="text-xl font-bold text-white mb-2">Technology Development Associate</h3>
-                      <h4 className="text-lg text-blue-100 mb-3">Optum (Rotational Program)</h4>
-                      <p className="text-sm text-blue-50 mb-4">🔧 Angular, Pandas, SQL, Postman</p>
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        Technology Development Associate
+                      </h3>
+                      <h4 className="text-lg text-blue-100 mb-3">
+                        Optum (Rotational Program)
+                      </h4>
+                      <p className="text-sm text-blue-50 mb-4">
+                        🔧 Angular, Pandas, SQL, Postman
+                      </p>
                       <p className="text-blue-50 text-sm">
-                        Enhanced vendor data accuracy using Pandas and SQL. Designed intuitive UI in Angular for
-                        financial forecasting and conducted comprehensive API testing with Postman.
+                        Enhanced vendor data accuracy using Pandas and SQL.
+                        Designed intuitive UI in Angular for financial
+                        forecasting and conducted comprehensive API testing with
+                        Postman.
                       </p>
                     </div>
                   </div>
@@ -554,76 +637,103 @@ export default function Home() {
                 <div className="relative flex flex-col md:flex-row items-center gap-8">
                   <div className="md:w-1/2 md:pr-12">
                     <div className="bg-pink-400 rounded-lg p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/50 hover:border-2 hover:border-white">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Georgia Institute of Technology</h3>
-                      <h4 className="text-lg text-gray-800 mb-3">Master of Science in Analytics 🎓</h4>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        Georgia Institute of Technology
+                      </h3>
+                      <h4 className="text-lg text-gray-800 mb-3">
+                        Master of Science in Analytics 🎓
+                      </h4>
                       <p className="text-gray-900 text-sm">
-                        📜 Currently pursuing advanced analytics education with focus on data science, machine learning,
-                        and statistical modeling.
+                        📜 Currently pursuing advanced analytics education with
+                        focus on data science, machine learning, and statistical
+                        modeling.
                       </p>
                     </div>
                   </div>
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-pink-400 rounded-full border-4 border-gray-900 flex items-center justify-center z-10 hidden md:flex">
                     <GraduationCap className="w-6 h-6 text-gray-900" />
                   </div>
-                  <div className="md:w-1/2 md:pl-12 text-white text-lg font-medium">Expected Dec 2026</div>
+                  <div className="md:w-1/2 md:pl-12 text-white text-lg font-medium">
+                    Expected Dec 2026
+                  </div>
                 </div>
 
                 {/* University of Maryland */}
                 <div className="relative flex flex-col md:flex-row-reverse items-center gap-8">
                   <div className="md:w-1/2 md:pl-12">
                     <div className="bg-pink-400 rounded-lg p-6 shadow-lg max-w-none transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/50 hover:border-2 hover:border-white">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">University of Maryland</h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        University of Maryland
+                      </h3>
                       <h4 className="text-lg text-gray-800 mb-3">
-                        Bachelor of Science in Information Science & Economics 🎓
+                        Bachelor of Science in Information Science & Economics
+                        🎓
                       </h4>
                       <p className="text-gray-900 text-sm">
-                        Minor in Statistics. Built foundation in data analysis, software development, and economic
-                        principles.
+                        Minor in Statistics. Built foundation in data analysis,
+                        software development, and economic principles.
                       </p>
                     </div>
                   </div>
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-pink-400 rounded-full border-4 border-gray-900 flex items-center justify-center z-10 hidden md:flex">
                     <GraduationCap className="w-6 h-6 text-gray-900" />
                   </div>
-                  <div className="md:w-1/2 md:pr-12 md:text-right text-white text-lg font-medium">May 2022</div>
+                  <div className="md:w-1/2 md:pr-12 md:text-right text-white text-lg font-medium">
+                    May 2022
+                  </div>
                 </div>
 
                 {/* T. Rowe Price Intern */}
                 <div className="relative flex flex-col md:flex-row items-center gap-8">
                   <div className="md:w-1/2 md:pr-12">
                     <div className="bg-blue-500 rounded-lg p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/50 hover:border-2 hover:border-white">
-                      <h3 className="text-xl font-bold text-white mb-2">Global Technology Intern</h3>
-                      <h4 className="text-lg text-blue-100 mb-3">T. Rowe Price</h4>
-                      <p className="text-sm text-blue-50 mb-4">🔧 Ansible, Infrastructure Automation</p>
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        Global Technology Intern
+                      </h3>
+                      <h4 className="text-lg text-blue-100 mb-3">
+                        T. Rowe Price
+                      </h4>
+                      <p className="text-sm text-blue-50 mb-4">
+                        🔧 Ansible, Infrastructure Automation
+                      </p>
                       <p className="text-blue-50 text-sm">
-                        Supported building and maintaining automation provisioning environment. Implemented Ansible for
-                        Windows remote management and researched frameworks for advancing the Infrastructure Automation
-                        Platform.
+                        Supported building and maintaining automation
+                        provisioning environment. Implemented Ansible for
+                        Windows remote management and researched frameworks for
+                        advancing the Infrastructure Automation Platform.
                       </p>
                     </div>
                   </div>
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-500 rounded-full border-4 border-gray-900 flex items-center justify-center z-10 hidden md:flex">
                     <Briefcase className="w-6 h-6 text-white" />
                   </div>
-                  <div className="md:w-1/2 md:pl-12 text-white text-lg font-medium">June 2021 - Aug 2021</div>
+                  <div className="md:w-1/2 md:pl-12 text-white text-lg font-medium">
+                    June 2021 - Aug 2021
+                  </div>
                 </div>
 
                 {/* Community College of Baltimore County */}
                 <div className="relative flex flex-col md:flex-row-reverse items-center gap-8">
                   <div className="md:w-1/2 md:pl-12">
                     <div className="bg-pink-400 rounded-lg p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/50 hover:border-2 hover:border-white">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Community College of Baltimore County</h3>
-                      <h4 className="text-lg text-gray-800 mb-3">Associate of Science in Computer Science 🎓</h4>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        Community College of Baltimore County
+                      </h3>
+                      <h4 className="text-lg text-gray-800 mb-3">
+                        Associate of Science in Computer Science 🎓
+                      </h4>
                       <p className="text-gray-900 text-sm">
-                        📜 Completed foundational computer science coursework including programming, data structures,
-                        and algorithms.
+                        📜 Completed foundational computer science coursework
+                        including programming, data structures, and algorithms.
                       </p>
                     </div>
                   </div>
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-pink-400 rounded-full border-4 border-gray-900 flex items-center justify-center z-10 hidden md:flex">
                     <GraduationCap className="w-6 h-6 text-gray-900" />
                   </div>
-                  <div className="md:w-1/2 md:pr-12 md:text-right text-white text-lg font-medium">May 2019</div>
+                  <div className="md:w-1/2 md:pr-12 md:text-right text-white text-lg font-medium">
+                    May 2019
+                  </div>
                 </div>
               </div>
             </div>
@@ -642,7 +752,9 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 md:p-4 bg-secondary/50 border-b border-border gap-3">
                   <div className="flex items-center gap-2">
                     <FileText className="w-4 md:w-5 h-4 md:h-5 text-primary flex-shrink-0" />
-                    <span className="font-medium text-sm md:text-base truncate">Oluwatobiloba_Odebo_Resume.pdf</span>
+                    <span className="font-medium text-sm md:text-base truncate">
+                      Oluwatobiloba_Odebo_Resume.pdf
+                    </span>
                   </div>
                   <a
                     href="/Oluwatobiloba_Odebo_Resume.pdf"
@@ -655,7 +767,11 @@ export default function Home() {
                 </div>
 
                 <div className="aspect-[8.5/11] relative">
-                  <iframe src="/Oluwatobiloba_Odebo_Resume.pdf" className="w-full h-full" title="Resume PDF" />
+                  <iframe
+                    src="/Oluwatobiloba_Odebo_Resume.pdf"
+                    className="w-full h-full"
+                    title="Resume PDF"
+                  />
                 </div>
               </div>
             </div>
@@ -663,14 +779,18 @@ export default function Home() {
         </section>
 
         {/* ===================== CONTACT SECTION ===================== */}
-        <section id="contact" className="py-16 md:py-24 px-4 md:px-6 bg-gray-900">
+        <section
+          id="contact"
+          className="py-16 md:py-24 px-4 md:px-6 bg-gray-900"
+        >
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 text-center text-white">
               Contact Me
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-12 md:mb-16 leading-relaxed max-w-3xl mx-auto text-center text-white">
-              I'm always open to discussing new opportunities, collaborations, or just chatting about product and
-              technology. Feel free to reach out!
+              I'm always open to discussing new opportunities, collaborations,
+              or just chatting about product and technology. Feel free to reach
+              out!
             </p>
 
             <div className="flex justify-center">
@@ -692,18 +812,25 @@ export default function Home() {
                     />
                   </div>
                   <div className="text-center md:text-left">
-                    <h3 className="text-xl font-bold mb-1">Oluwatobiloba Odebo</h3>
-                    <p className="text-black text-sm mb-3">Product Management | Analytics</p>
-                    <p className="text-sm text-black leading-relaxed mb-2">
-                      With 3 years of full stack experience, skilled in Data Analysis, Angular, Node.js, Typescript,
-                      SQL, Kubernetes, Docker, Agile/Scrum
+                    <h3 className="text-xl font-bold mb-1">
+                      Oluwatobiloba Odebo
+                    </h3>
+                    <p className="text-black text-sm mb-3">
+                      Product Management | Analytics
                     </p>
-                    <p className="text-sm text-black">Product School | Georgia Institute of Technology</p>
+                    <p className="text-sm text-black leading-relaxed mb-2">
+                      With 3 years of full stack experience, skilled in Data
+                      Analysis, Angular, Node.js, Typescript, SQL, Kubernetes,
+                      Docker, Agile/Scrum
+                    </p>
+                    <p className="text-sm text-black">
+                      Product School | Georgia Institute of Technology
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center justify-center md:justify-start gap-4 flex-wrap">
                   <a
-                    href="https://www.linkedin.com/in/oluwatobiloba-odebo-b025361a4/"
+                    href="https://www.linkedin.com/in/oluwatobiloba-odebo-csm%C2%AE-cspo%C2%AE-b025361a4/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#0077b5] hover:bg-[#005885] text-white font-bold px-3 py-2 rounded-md transition-colors"
@@ -734,30 +861,47 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
               {/* Quick Links Section - Left */}
               <div className="flex flex-col items-center">
-                <h3 className="font-bold mb-3 text-gray-900 text-center">Quick Links</h3>
+                <h3 className="font-bold mb-3 text-gray-900 text-center">
+                  Quick Links
+                </h3>
                 <ul className="flex gap-3 md:gap-6 text-sm md:text-base flex-wrap justify-center">
                   <li>
-                    <a href="#about" className="text-gray-700 hover:text-amber-700 transition-colors">
+                    <a
+                      href="#about"
+                      className="text-gray-700 hover:text-amber-700 transition-colors"
+                    >
                       About
                     </a>
                   </li>
                   <li>
-                    <a href="#skills" className="text-gray-700 hover:text-amber-700 transition-colors">
+                    <a
+                      href="#skills"
+                      className="text-gray-700 hover:text-amber-700 transition-colors"
+                    >
                       Skills
                     </a>
                   </li>
                   <li>
-                    <a href="#projects" className="text-gray-700 hover:text-amber-700 transition-colors">
+                    <a
+                      href="#projects"
+                      className="text-gray-700 hover:text-amber-700 transition-colors"
+                    >
                       Projects
                     </a>
                   </li>
                   <li>
-                    <a href="#timeline" className="text-gray-700 hover:text-amber-700 transition-colors">
+                    <a
+                      href="#timeline"
+                      className="text-gray-700 hover:text-amber-700 transition-colors"
+                    >
                       Experience
                     </a>
                   </li>
                   <li>
-                    <a href="#contact" className="text-gray-700 hover:text-amber-700 transition-colors">
+                    <a
+                      href="#contact"
+                      className="text-gray-700 hover:text-amber-700 transition-colors"
+                    >
                       Contact
                     </a>
                   </li>
@@ -766,7 +910,9 @@ export default function Home() {
 
               {/* Inspirational Quote Section - Center */}
               <div className="flex flex-col items-center text-center -ml-0.5">
-                <p className="text-gray-700 italic text-lg font-medium">"Imagination is the beginning of creation"</p>
+                <p className="text-gray-700 italic text-lg font-medium">
+                  "Imagination is the beginning of creation"
+                </p>
               </div>
 
               {/* Connect Section - Right */}
@@ -774,7 +920,7 @@ export default function Home() {
                 <h3 className="font-bold mb-3 text-gray-900">Connect</h3>
                 <div className="flex gap-6">
                   <a
-                    href="https://www.linkedin.com/in/oluwatobiloba-odebo-b025361a4/"
+                    href="https://www.linkedin.com/in/oluwatobiloba-odebo-csm%C2%AE-cspo%C2%AE-b025361a4/"
                     className="text-gray-700 hover:text-amber-700 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -803,25 +949,35 @@ export default function Home() {
         </footer>
       </main>
     </div>
-  )
+  );
 }
 
 interface ProjectCardProps {
-  title: string
-  description: string
-  image: string
-  isActive: boolean
-  onClick: () => void
-  comingSoon?: boolean
-  link?: string
+  title: string;
+  description: string;
+  image: string;
+  isActive: boolean;
+  onClick: () => void;
+  comingSoon?: boolean;
+  link?: string;
 }
 
-function ProjectCard({ title, description, image, isActive, onClick, comingSoon, link }: ProjectCardProps) {
+function ProjectCard({
+  title,
+  description,
+  image,
+  isActive,
+  onClick,
+  comingSoon,
+  link,
+}: ProjectCardProps) {
   return (
     <div
       onClick={onClick}
       className={`group cursor-pointer rounded-xl md:rounded-2xl overflow-hidden transition-all duration-300 border-2 bg-card flex flex-col ${
-        isActive ? "border-primary shadow-xl" : "border-border hover:border-primary/50 hover:shadow-lg"
+        isActive
+          ? "border-primary shadow-xl"
+          : "border-border hover:border-primary/50 hover:shadow-lg"
       }`}
     >
       <div className="aspect-[4/3] relative overflow-hidden bg-white">
@@ -832,7 +988,9 @@ function ProjectCard({ title, description, image, isActive, onClick, comingSoon,
         />
       </div>
       <div className="p-4 md:p-6 bg-card flex flex-col flex-1">
-        <h4 className="text-base md:text-lg font-semibold mb-2 uppercase tracking-wide text-balance">{title}</h4>
+        <h4 className="text-base md:text-lg font-semibold mb-2 uppercase tracking-wide text-balance">
+          {title}
+        </h4>
         {link ? (
           <a
             href={link}
@@ -851,22 +1009,31 @@ function ProjectCard({ title, description, image, isActive, onClick, comingSoon,
         ) : null}
       </div>
     </div>
-  )
+  );
 }
 
 // Certification Card Component
 interface CertificationCardProps {
-  title: string | React.ReactNode
-  provider: string
-  status: string
-  link?: string
+  title: string | React.ReactNode;
+  provider: string;
+  status: string;
+  link?: string;
 }
 
-function CertificationCard({ title, provider, status, link }: CertificationCardProps) {
+function CertificationCard({
+  title,
+  provider,
+  status,
+  link,
+}: CertificationCardProps) {
   return (
     <div className="p-4 md:p-6 bg-card rounded-xl md:rounded-2xl border border-border hover:border-primary transition-all duration-300 hover:shadow-lg group">
-      <h4 className="text-lg md:text-xl font-semibold mb-3 group-hover:text-primary transition-colors">{title}</h4>
-      <p className="text-sm md:text-base text-muted-foreground mb-3">{provider}</p>
+      <h4 className="text-lg md:text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+        {title}
+      </h4>
+      <p className="text-sm md:text-base text-muted-foreground mb-3">
+        {provider}
+      </p>
       <p className="text-xs md:text-sm text-muted-foreground mb-4">{status}</p>
       {link && (
         <a
@@ -893,5 +1060,5 @@ function CertificationCard({ title, provider, status, link }: CertificationCardP
         </a>
       )}
     </div>
-  )
+  );
 }
