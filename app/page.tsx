@@ -79,14 +79,14 @@ export default function Home() {
               </span>
             </button>
 
-            <nav className="flex items-center ml-6">
+            <nav className="flex items-center ml-2 md:ml-6">
               <a
                 href="#about"
                 onClick={(e) => {
                   e.preventDefault()
                   scrollToSection("about")
                 }}
-                className="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
+                className="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
                 About
               </a>
@@ -96,7 +96,7 @@ export default function Home() {
                   e.preventDefault()
                   scrollToSection("projects")
                 }}
-                className="inline-block animate__animated animate__fadeInDown kill-link-style delay2 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
+                className="inline-block animate__animated animate__fadeInDown kill-link-style delay2 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
                 Projects
               </a>
@@ -106,7 +106,7 @@ export default function Home() {
                   e.preventDefault()
                   scrollToSection("timeline")
                 }}
-                className="inline-block animate__animated animate__fadeInDown kill-link-style delay3 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
+                className="inline-block animate__animated animate__fadeInDown kill-link-style delay3 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
                 Experience
               </a>
@@ -116,7 +116,7 @@ export default function Home() {
                   e.preventDefault()
                   scrollToSection("contact")
                 }}
-                className="inline-block animate__animated animate__fadeInDown kill-link-style delay4 ml-6 mr-3 duration-300 text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
+                className="inline-block animate__animated animate__fadeInDown kill-link-style delay4 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
                 Contact
               </a>
