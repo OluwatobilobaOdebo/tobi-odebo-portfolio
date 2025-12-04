@@ -151,3 +151,40 @@ body {
 .duration-600 {
   transition-duration: 600ms;
 }
+
+/* Adding custom CSS classes from reference HTML */
+/* Remove color: inherit to allow white text color to work properly */
+.kill-link-style {
+  text-decoration: none;
+}
+
+/* Magical underline effect for navigation links */
+.underline--magical {
+  /* Changed gradient back to brown for navigation underlines */
+  background-image: linear-gradient(120deg, #b45309 0%, #92400e 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+}
+
+.underline--magical:hover {
+  background-size: 100% 88%;
+}
+
+/* Animation delays for staggered entrance */
+.delay1 {
+  animation-delay: 0.1s;
+}
+
+.delay2 {
+  animation-delay: 0.2s;
+}
+
+.delay3 {
+  animation-delay: 0.3s;
+}
+
+.delay4 {
+  animation-delay: 0.4s;
+}
