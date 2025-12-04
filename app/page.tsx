@@ -803,11 +803,12 @@ export default function Home() {
                     <Image
                       src="/linkedin-tobi.png"
                       alt="Oluwatobiloba Odebo"
-                      width={112}
-                      height={128}
+                      width={224}
+                      height={256}
                       className="w-full h-full object-cover scale-110"
                       quality={100}
                       priority
+                      unoptimized
                       style={{ objectPosition: "center 25%" }}
                     />
                   </div>
