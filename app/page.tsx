@@ -127,7 +127,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="md:pt-0">
+      <main className="pt-24 md:pt-0">
         {/* ===================== HERO SECTION ===================== */}
         <section
           id="hero"
@@ -413,6 +413,7 @@ export default function Home() {
                   isActive={false}
                   onClick={() => {}}
                   link="https://fullstack-ecommerce-site-tawny.vercel.app/"
+                  tagline="Full-Stack Project"
                 />
                 <ProjectCard
                   title="SaaS Subscription App Starter"
@@ -447,6 +448,10 @@ export default function Home() {
                   isActive={false}
                   onClick={() => {}}
                   link="/google-calendar"
+                  logoImage="/google_calendar_logo.png"
+                  logoBgGradient="from-slate-700 via-slate-600 to-slate-800"
+                  buttonText="View Case Study"
+                  tagline="Product Case Study"
                 />
                 <ProjectCard
                   title="Marketplace MVP (Two-Sided Platform)"
@@ -961,6 +966,12 @@ interface ProjectCardProps {
   onClick: () => void;
   comingSoon?: boolean;
   link?: string;
+  logoImage?: string;
+  logoBgColor?: string;
+  logoBgGradient?: string;
+  buttonText?: string;
+  tagline?: string;
+  isScreenshot?: boolean;
 }
 
 function ProjectCard({
@@ -971,6 +982,12 @@ function ProjectCard({
   onClick,
   comingSoon,
   link,
+  logoImage,
+  logoBgColor,
+  logoBgGradient,
+  buttonText = "View Project",
+  tagline,
+  isScreenshot = false,
 }: ProjectCardProps) {
   return (
     <div
@@ -982,29 +999,87 @@ function ProjectCard({
       }`}
     >
       <div className="aspect-[4/3] relative overflow-hidden bg-white">
-        <img
-          src={image || "/placeholder.svg"}
-          alt={title}
-          className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300"
-        />
+        {logoImage ? (
+          <div
+            className={`w-full h-full flex items-center justify-center relative ${
+              isScreenshot ? "p-3" : "p-8"
+            } ${logoBgGradient ? `bg-gradient-to-br ${logoBgGradient}` : ""}`}
+            style={
+              !logoBgGradient
+                ? { backgroundColor: logoBgColor || "#6b7280" }
+                : {}
+            }
+          >
+            {/* Subtle pattern overlay - only for non-screenshots */}
+            {!isScreenshot && (
+              <div className="absolute inset-0 opacity-10">
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.2) 1px, transparent 1px)`,
+                    backgroundSize: "20px 20px",
+                  }}
+                />
+              </div>
+            )}
+            {/* Glow effect behind logo - only for non-screenshots */}
+            {!isScreenshot && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-40 h-40 md:w-48 md:h-48 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all duration-500" />
+              </div>
+            )}
+            <div
+              className={`relative z-10 ${
+                isScreenshot
+                  ? "w-full h-full rounded-lg overflow-hidden shadow-2xl"
+                  : "w-24 h-24 md:w-28 md:h-28 drop-shadow-2xl"
+              }`}
+            >
+              <img
+                src={logoImage}
+                alt={title}
+                className={`w-full group-hover:scale-[1.02] transition-transform duration-500 ${
+                  isScreenshot
+                    ? "object-cover rounded-lg h-full"
+                    : "object-contain h-full"
+                }`}
+              />
+            </div>
+          </div>
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-slate-50 via-white to-gray-100 flex items-center justify-center p-4">
+            <div className="w-full h-full relative rounded-lg overflow-hidden shadow-lg border border-gray-200/50">
+              <img
+                src={image || "/placeholder.svg"}
+                alt={title}
+                className="object-cover object-top w-full h-full group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          </div>
+        )}
       </div>
       <div className="p-4 md:p-6 bg-card flex flex-col flex-1">
-        <h4 className="text-base md:text-lg font-semibold mb-2 uppercase tracking-wide text-balance">
+        {tagline && (
+          <span className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
+            {tagline}
+          </span>
+        )}
+        <h4 className="text-base md:text-lg font-bold mb-3 leading-tight text-balance">
           {title}
         </h4>
         {link ? (
           <a
             href={link}
-            target="_blank"
+            target={link.startsWith("/") ? "_self" : "_blank"}
             rel="noopener noreferrer"
-            className="mt-auto px-4 md:px-6 py-2 border-2 border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors uppercase text-xs md:text-sm tracking-wide inline-flex items-center justify-center gap-2"
+            className="mt-auto px-4 md:px-6 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 text-xs md:text-sm tracking-wide inline-flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
-            View Project
+            {buttonText}
             <ArrowUpRight className="w-4 h-4" />
           </a>
         ) : comingSoon ? (
-          <button className="mt-auto px-4 md:px-6 py-2 border-2 border-primary text-primary rounded-lg font-medium hover:underline transition-all">
+          <button className="mt-auto px-4 md:px-6 py-2.5 border-2 border-gray-300 text-gray-500 rounded-lg font-medium cursor-default bg-gray-50">
             Coming Soon
           </button>
         ) : null}
