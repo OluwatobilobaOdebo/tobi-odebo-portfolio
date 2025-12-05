@@ -230,7 +230,7 @@ export default function Home() {
         {/* ===================== SKILLS SECTION ===================== */}
         <section id="skills" className="py-16 md:py-24 px-4 md:px-6 bg-white">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center text-gray-900">
               Technical Skills
             </h2>
 
