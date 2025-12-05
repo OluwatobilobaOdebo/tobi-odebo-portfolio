@@ -1250,17 +1250,13 @@ export default function GoogleCalendarCaseStudy() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto flex justify-center">
-            <button
-              onClick={() => {
-                // Check if there's a next available case study
-                // Currently, the next PM case study is "Coming Soon", so refresh the page
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
+            <Link
+              href="/uber"
               className="px-8 py-4 border-2 border-[#5b4fcf] text-[#5b4fcf] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#5b4fcf] hover:text-white cursor-pointer"
               style={{ fontSize: "14px", letterSpacing: "0.2em" }}
             >
               VIEW NEXT CASE STUDY
-            </button>
+            </Link>
           </div>
         </div>
       </section>

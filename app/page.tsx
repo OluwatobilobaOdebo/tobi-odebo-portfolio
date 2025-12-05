@@ -428,16 +428,16 @@ export default function Home() {
                   tagline="Full-Stack Project"
                 />
                 <ProjectCard
-                  title="Real Estate Property Marketplace"
-                  description="Real estate marketplace platform"
+                  title="AI Resume Tailor + Job Tracker"
+                  description="AI-powered resume and job tracking tool"
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
                   comingSoon
                 />
                 <ProjectCard
-                  title="AI Resume Tailor + Job Tracker"
-                  description="AI-powered resume and job tracking tool"
+                  title="Real Estate Property Marketplace"
+                  description="Real estate marketplace platform"
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
@@ -471,7 +471,11 @@ export default function Home() {
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
-                  comingSoon
+                  link="/uber"
+                  logoImage="/cooler_uber_logo.png"
+                  logoBgGradient="from-black via-gray-900 to-black"
+                  buttonText="View Case Study"
+                  tagline="Product Case Study"
                 />
                 <ProjectCard
                   title="AI Tax Assistant"
@@ -479,6 +483,10 @@ export default function Home() {
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
+                  logoImage="/cash_picture.png"
+                  secondLogoImage="/ai_icon.png"
+                  logoBgGradient="from-emerald-800 via-green-700 to-teal-800"
+                  tagline="Product Case Study"
                   comingSoon
                 />
               </div>
@@ -500,16 +508,16 @@ export default function Home() {
                   comingSoon
                 />
                 <ProjectCard
-                  title="Customer Churn Prediction"
-                  description="Churn prediction analysis"
+                  title="AI Startup Failure Prediction"
+                  description="Startup failure prediction"
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
                   comingSoon
                 />
                 <ProjectCard
-                  title="AI Startup Failure Prediction"
-                  description="Startup failure prediction"
+                  title="Customer Churn Prediction"
+                  description="Churn prediction analysis"
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
@@ -536,39 +544,46 @@ export default function Home() {
                 provider="Google / Coursera"
                 status="Issued Nov 2025"
                 link="https://www.credly.com/badges/7e9d13c0-7c3f-4536-af4b-b55fae7b4340"
+                logo="/google.png"
               />
               <CertificationCard
                 title="Certified ScrumMaster (CSM)"
                 provider="Scrum Alliance"
                 status="Issued Nov 2025 · Expires Nov 2027"
                 link="https://bcert.me/srmqcmvxr"
+                logo="/csm_badge.png"
               />
               <CertificationCard
                 title="Certified Scrum Product Owner (CSPO)"
                 provider="Scrum Alliance"
                 status="Issued Nov 2025 · Expires Nov 2027"
                 link="https://bcert.me/slwdpmycu"
+                logo="/cspo_badge.png"
               />
               <CertificationCard
                 title="Generative AI for Software Development"
                 provider="DeepLearning.AI"
                 status="Issued Nov 2025"
                 link="https://learn.deeplearning.ai/certificates/ad1b0ef0-4b6c-4ca7-9878-a0c1b0ebb780"
+                logo="/deep_learning_ai.jpg"
               />
               <CertificationCard
                 title="Natural Language Processing Specialization"
                 provider="DeepLearning.AI"
                 status="In Progress (will complete by Dec 7th)"
+                logo="/deep_learning_ai.jpg"
               />
               <CertificationCard
                 title="Product Management Certification"
                 provider="Product School"
                 status="Planned Dec 8th - 12th"
+                logo="/product_school_logo.jpg"
               />
               <CertificationCard
                 title="IBM AI Product Manager Professional Certificate"
                 provider="IBM / Coursera"
                 status="After Dec 12th"
+                logo="/ibm_logo.png"
               />
             </div>
           </div>
@@ -981,6 +996,7 @@ interface ProjectCardProps {
   comingSoon?: boolean;
   link?: string;
   logoImage?: string;
+  secondLogoImage?: string;
   logoBgColor?: string;
   logoBgGradient?: string;
   buttonText?: string;
@@ -997,6 +1013,7 @@ function ProjectCard({
   comingSoon,
   link,
   logoImage,
+  secondLogoImage,
   logoBgColor,
   logoBgGradient,
   buttonText = "View Project",
@@ -1044,20 +1061,41 @@ function ProjectCard({
             )}
             <div
               className={`relative z-10 ${
-                isScreenshot
+                secondLogoImage
+                  ? "flex items-center gap-3 md:gap-4"
+                  : isScreenshot
                   ? "w-full h-full rounded-lg overflow-hidden shadow-2xl"
                   : "w-24 h-24 md:w-28 md:h-28 drop-shadow-2xl"
               }`}
             >
-              <img
-                src={logoImage}
-                alt={title}
-                className={`w-full group-hover:scale-[1.02] transition-transform duration-500 ${
-                  isScreenshot
-                    ? "object-cover rounded-lg h-full"
-                    : "object-contain h-full"
-                }`}
-              />
+              {secondLogoImage ? (
+                <>
+                  <div className="w-16 h-16 md:w-20 md:h-20 drop-shadow-2xl">
+                    <img
+                      src={secondLogoImage}
+                      alt={`${title} icon`}
+                      className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="w-20 h-20 md:w-24 md:h-24 drop-shadow-2xl">
+                    <img
+                      src={logoImage}
+                      alt={title}
+                      className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
+                </>
+              ) : (
+                <img
+                  src={logoImage}
+                  alt={title}
+                  className={`w-full group-hover:scale-[1.02] transition-transform duration-500 ${
+                    isScreenshot
+                      ? "object-cover rounded-lg h-full"
+                      : "object-contain h-full"
+                  }`}
+                />
+              )}
             </div>
           </div>
         ) : (
@@ -1108,6 +1146,7 @@ interface CertificationCardProps {
   provider: string;
   status: string;
   link?: string;
+  logo?: string;
 }
 
 function CertificationCard({
@@ -1115,40 +1154,56 @@ function CertificationCard({
   provider,
   status,
   link,
+  logo,
 }: CertificationCardProps) {
   return (
     <div className="p-4 md:p-6 bg-card rounded-xl md:rounded-2xl border border-border hover:border-primary transition-all duration-300 hover:shadow-lg group">
-      <h4 className="text-lg md:text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-        {title}
-      </h4>
-      <p className="text-sm md:text-base text-muted-foreground mb-3">
-        {provider}
-      </p>
-      <p className="text-xs md:text-sm text-muted-foreground mb-4">{status}</p>
-      {link && (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center text-sm md:text-base text-primary font-medium hover:underline transition-all"
-        >
-          Show Credential
-          <svg
-            className="ml-1 w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+      <div className="flex items-start gap-4">
+        {logo && (
+          <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-lg bg-white border border-gray-100 shadow-sm flex items-center justify-center p-1.5 overflow-hidden">
+            <img
+              src={logo}
+              alt={`${provider} logo`}
+              className="w-full h-full object-contain"
             />
-          </svg>
-        </a>
-      )}
+          </div>
+        )}
+        <div className="flex-1 min-w-0">
+          <h4 className="text-lg md:text-xl font-semibold mb-2 group-hover:text-primary transition-colors leading-tight">
+            {title}
+          </h4>
+          <p className="text-sm md:text-base text-muted-foreground mb-1">
+            {provider}
+          </p>
+          <p className="text-xs md:text-sm text-muted-foreground mb-3">
+            {status}
+          </p>
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm md:text-base text-primary font-medium hover:underline transition-all"
+            >
+              Show Credential
+              <svg
+                className="ml-1 w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </a>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
