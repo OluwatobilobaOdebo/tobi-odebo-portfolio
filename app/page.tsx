@@ -959,8 +959,10 @@ export default function Home() {
             </div>
 
             <div className="pt-6 border-t border-gray-300 text-center text-gray-700">
-              <div>© {new Date().getFullYear()} Oluwatobiloba Odebo.</div>
-              <div className="mt-1">All rights reserved.</div>
+              <div>
+                Copyright © {new Date().getFullYear()} Oluwatobiloba Odebo. All
+                rights reserved.
+              </div>
             </div>
           </div>
         </footer>
