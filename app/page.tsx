@@ -43,27 +43,30 @@ export default function Home() {
   const scrollToSection = (id: string) => {
     if (id === "hero") {
       window.scrollTo({ top: 0, behavior: "smooth" });
+      // Remove hash from URL when going to hero/top
+      window.history.pushState(null, "", window.location.pathname);
     } else {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
+        // Update URL hash to match the section
+        window.history.pushState(null, "", `#${id}`);
       }
     }
   };
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="h-6 fixed top-0 z-[60] md:relative hidden md:block w-full bg-amber-700"></div>
+      <div className="h-6 fixed top-0 z-[60] w-full bg-slate-800 hidden md:block"></div>
 
       <header
-        className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed left-0 right-0 z-40 transition-all duration-300 top-0 md:top-6 bg-slate-800 ${
           scrolled
-            ? "top-0 py-3 md:py-4 shadow-lg mb-8"
-            : "top-0 md:top-6 py-4 md:py-6 mb-12 md:mb-16 bg-transparent"
+            ? "py-1.5 md:py-1.5 shadow-lg mb-8"
+            : "py-2 md:py-2.5 mb-12 md:mb-16"
         }`}
-        style={scrolled ? { background: "rgba(180, 83, 9, 0.975)" } : {}}
       >
-        <div className="w-full px-4 md:px-8 lg:px-12 flex items-center justify-start">
+        <div className="w-full px-5 md:px-8 lg:px-12 flex items-center justify-start">
           <div className="flex items-center">
             <button
               onClick={(e) => {
@@ -81,14 +84,14 @@ export default function Home() {
               </span>
             </button>
 
-            <nav className="flex items-center ml-2 md:ml-6">
+            <nav className="flex items-center ml-3 md:ml-6 gap-4 md:gap-6 lg:gap-8">
               <a
                 href="#about"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("about");
                 }}
-                className="inline-block animate__animated animate__fadeInDown kill-link-style delay1 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
+                className="inline-block animate__animated animate__fadeInDown kill-link-style delay1 duration-300 text-lg md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
                 About
               </a>
@@ -98,7 +101,7 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection("projects");
                 }}
-                className="inline-block animate__animated animate__fadeInDown kill-link-style delay2 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
+                className="inline-block animate__animated animate__fadeInDown kill-link-style delay2 duration-300 text-lg md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
                 Projects
               </a>
@@ -108,7 +111,7 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection("timeline");
                 }}
-                className="inline-block animate__animated animate__fadeInDown kill-link-style delay3 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
+                className="inline-block animate__animated animate__fadeInDown kill-link-style delay3 duration-300 text-lg md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
                 Experience
               </a>
@@ -118,7 +121,7 @@ export default function Home() {
                   e.preventDefault();
                   scrollToSection("contact");
                 }}
-                className="inline-block animate__animated animate__fadeInDown kill-link-style delay4 ml-2 md:ml-4 lg:ml-6 mr-1 md:mr-2 lg:mr-3 duration-300 text-sm md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
+                className="inline-block animate__animated animate__fadeInDown kill-link-style delay4 duration-300 text-lg md:text-xl lg:text-2xl xl:text-3xl cursor-pointer underline--magical font-extrabold !text-white"
               >
                 Contact
               </a>
@@ -142,12 +145,20 @@ export default function Home() {
           {/* Dark overlay for better text visibility */}
           <div className="absolute inset-0 bg-black/60"></div>
 
-          <div className="relative z-10 w-full px-4 md:px-8 lg:px-12 flex items-end md:items-start pb-32 md:pb-0 md:pt-20 min-h-screen">
-            <div className="text-left max-w-[280px] md:max-w-sm lg:max-w-md xl:max-w-lg">
-              <h1 className="animate__animated animate__fadeInUp text-xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                Hi, I'm Tobi — welcome to my portfolio. I build intuitive,
-                impactful digital solutions.
+          <div className="relative z-10 w-full px-4 md:px-8 lg:px-12 flex items-end md:items-start justify-center md:justify-start pb-32 md:pb-0 md:pt-20 min-h-screen">
+            <div className="text-center md:text-left max-w-[360px] md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+              <p className="animate__animated animate__fadeInUp text-sm md:text-base text-orange-400 font-semibold tracking-widest uppercase mb-3">
+                Welcome to my portfolio
+              </p>
+              <h1 className="animate__animated animate__fadeInUp text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-4">
+                Hi, I'm <span className="text-orange-400">Tobi</span>
               </h1>
+              <p className="animate__animated animate__fadeInUp text-base md:text-xl lg:text-2xl text-white/90 leading-relaxed font-medium">
+                I build{" "}
+                <span className="text-orange-400 font-bold">intuitive</span>,{" "}
+                <span className="text-orange-400 font-bold">impactful</span>{" "}
+                digital solutions.
+              </p>
             </div>
           </div>
 
@@ -514,7 +525,7 @@ export default function Home() {
           className="py-16 md:py-24 px-4 md:px-6 bg-white"
         >
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center text-gray-900">
               Certifications
             </h2>
 
