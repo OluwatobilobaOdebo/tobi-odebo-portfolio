@@ -428,16 +428,16 @@ export default function Home() {
                   tagline="Full-Stack Project"
                 />
                 <ProjectCard
-                  title="SaaS Subscription App Starter"
-                  description="SaaS application template"
+                  title="Real Estate Property Marketplace"
+                  description="Real estate marketplace platform"
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
                   comingSoon
                 />
                 <ProjectCard
-                  title="Real-Time Chat App"
-                  description="Real-time messaging application"
+                  title="AI Resume Tailor + Job Tracker"
+                  description="AI-powered resume and job tracking tool"
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
@@ -466,16 +466,16 @@ export default function Home() {
                   tagline="Product Case Study"
                 />
                 <ProjectCard
-                  title="Marketplace MVP (Two-Sided Platform)"
-                  description="Two-sided marketplace platform"
+                  title="AI Driver Notes Summary for Uber"
+                  description="AI-powered driver notes summarization"
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
                   comingSoon
                 />
                 <ProjectCard
-                  title="Customer Onboarding Redesign for a B2C App"
-                  description="Onboarding experience redesign"
+                  title="AI Tax Assistant"
+                  description="AI-powered tax assistance tool"
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
@@ -492,24 +492,24 @@ export default function Home() {
               </h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 <ProjectCard
-                  title="End-to-End Data Pipeline + Analytics System"
-                  description="Complete data pipeline"
+                  title="5-Year Real Estate Price Prediction Dashboard"
+                  description="Real estate price forecasting"
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
                   comingSoon
                 />
                 <ProjectCard
-                  title="Sales Forecasting with Time Series"
-                  description="Time series forecasting"
+                  title="Customer Churn Prediction"
+                  description="Churn prediction analysis"
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
                   comingSoon
                 />
                 <ProjectCard
-                  title="Fraud Detection Analytics"
-                  description="Fraud detection system"
+                  title="AI Startup Failure Prediction"
+                  description="Startup failure prediction"
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
