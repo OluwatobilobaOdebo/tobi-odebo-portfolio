@@ -2,38 +2,8 @@
 
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { useEffect, useState, useRef } from "react";
 
 export default function GoogleCalendarCaseStudy() {
-  const [artworkOpacity, setArtworkOpacity] = useState(1);
-  const overviewRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!overviewRef.current) return;
-
-      const section = overviewRef.current;
-      const sectionRect = section.getBoundingClientRect();
-      const sectionHeight = sectionRect.height;
-
-      // Calculate how much of the section has been scrolled past
-      // When the section top is at viewport top, scrollProgress = 0
-      // When the section bottom is at viewport top, scrollProgress = 1
-      const scrollProgress = Math.max(
-        0,
-        Math.min(1, -sectionRect.top / sectionHeight)
-      );
-
-      // Fade out as we scroll through the section
-      const newOpacity = 1 - scrollProgress;
-      setArtworkOpacity(Math.max(0, Math.min(1, newOpacity)));
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -87,34 +57,25 @@ export default function GoogleCalendarCaseStudy() {
       </header>
 
       {/* Overview Section */}
-      <section
-        ref={overviewRef}
-        className="py-16 md:py-24 bg-[#5b4fcf] relative overflow-hidden"
-      >
-        {/* Background Artwork - positioned at the left corner */}
-        <div
-          className="absolute left-0 top-16 md:top-24 pointer-events-none transition-opacity duration-150 ease-out z-0"
-          style={{ opacity: artworkOpacity }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/background_artwork.png"
-            alt=""
-            className="w-[200px] md:w-[280px] lg:w-[350px] h-auto"
-          />
-        </div>
+      <section className="py-16 md:py-24 bg-[#5b4fcf] relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
             <h2
               className="font-black mb-6 text-white leading-[0.95]"
-              style={{ fontFamily: "var(--font-futura)", fontSize: "120px" }}
+              style={{
+                fontFamily: "var(--font-futura)",
+                fontSize: "clamp(40px, 12vw, 120px)",
+              }}
             >
               AI Meeting Preparation Assistant
             </h2>
             <div className="border-l-4 border-white pl-4 mb-12">
               <p
                 className="font-bold text-white"
-                style={{ fontFamily: "var(--font-futura)", fontSize: "48px" }}
+                style={{
+                  fontFamily: "var(--font-futura)",
+                  fontSize: "clamp(28px, 6vw, 48px)",
+                }}
               >
                 Google Calendar
               </p>
@@ -751,100 +712,124 @@ export default function GoogleCalendarCaseStudy() {
             </div>
 
             {/* Job Stories Grid */}
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <div className="grid md:grid-cols-2 gap-12 mb-16 text-[#1a1a1a]">
               {/* Job Story 1 */}
               <div className="border-l-2 border-gray-300 pl-6">
                 <p
-                  className="mb-4"
+                  className="mb-4 text-[#1a1a1a]"
                   style={{ fontSize: "18px", lineHeight: "1.8" }}
                 >
-                  <span className="font-bold">I want to...</span> quickly
-                  understand the most important context for an upcoming meeting
+                  <span className="font-bold text-[#5b4fcf]">I want to...</span>{" "}
+                  quickly understand the most important context for an upcoming
+                  meeting
                 </p>
                 <p
-                  className="mb-4"
+                  className="mb-4 text-[#1a1a1a]"
                   style={{ fontSize: "18px", lineHeight: "1.8" }}
                 >
-                  <span className="font-bold">So that I can...</span> enter the
-                  discussion prepared without searching across Gmail, Drive, and
-                  past notes.
+                  <span className="font-bold text-[#5b4fcf]">
+                    So that I can...
+                  </span>{" "}
+                  enter the discussion prepared without searching across Gmail,
+                  Drive, and past notes.
                 </p>
-                <p style={{ fontSize: "18px", lineHeight: "1.8" }}>
-                  <span className="font-bold">Example:</span> "Show me a concise
-                  summary of the last meeting's decisions, open questions, and
-                  top priorities for the next call."
+                <p
+                  className="text-[#1a1a1a]"
+                  style={{ fontSize: "18px", lineHeight: "1.8" }}
+                >
+                  <span className="font-bold text-[#5b4fcf]">Example:</span>{" "}
+                  "Show me a concise summary of the last meeting's decisions,
+                  open questions, and top priorities for the next call."
                 </p>
               </div>
 
               {/* Job Story 2 */}
               <div className="border-l-2 border-gray-300 pl-6">
                 <p
-                  className="mb-4"
+                  className="mb-4 text-[#1a1a1a]"
                   style={{ fontSize: "18px", lineHeight: "1.8" }}
                 >
-                  <span className="font-bold">I want to...</span> automatically
-                  surface the documents and emails most relevant to a meeting
+                  <span className="font-bold text-[#5b4fcf]">I want to...</span>{" "}
+                  automatically surface the documents and emails most relevant
+                  to a meeting
                 </p>
                 <p
-                  className="mb-4"
+                  className="mb-4 text-[#1a1a1a]"
                   style={{ fontSize: "18px", lineHeight: "1.8" }}
                 >
-                  <span className="font-bold">So that I can...</span> review
-                  everything I need in one place instead of manually hunting for
-                  attachments or threads.
+                  <span className="font-bold text-[#5b4fcf]">
+                    So that I can...
+                  </span>{" "}
+                  review everything I need in one place instead of manually
+                  hunting for attachments or threads.
                 </p>
-                <p style={{ fontSize: "18px", lineHeight: "1.8" }}>
-                  <span className="font-bold">Example:</span> "Pull up the
-                  design doc that was shared last week and the email thread
-                  where the final deadline was discussed."
+                <p
+                  className="text-[#1a1a1a]"
+                  style={{ fontSize: "18px", lineHeight: "1.8" }}
+                >
+                  <span className="font-bold text-[#5b4fcf]">Example:</span>{" "}
+                  "Pull up the design doc that was shared last week and the
+                  email thread where the final deadline was discussed."
                 </p>
               </div>
 
               {/* Job Story 3 */}
               <div className="border-l-2 border-gray-300 pl-6">
                 <p
-                  className="mb-4"
+                  className="mb-4 text-[#1a1a1a]"
                   style={{ fontSize: "18px", lineHeight: "1.8" }}
                 >
-                  <span className="font-bold">I want to...</span> extract action
-                  items and assigned owners from previous interactions
+                  <span className="font-bold text-[#5b4fcf]">I want to...</span>{" "}
+                  extract action items and assigned owners from previous
+                  interactions
                 </p>
                 <p
-                  className="mb-4"
+                  className="mb-4 text-[#1a1a1a]"
                   style={{ fontSize: "18px", lineHeight: "1.8" }}
                 >
-                  <span className="font-bold">So that I can...</span> ensure
-                  follow-through and accountability before entering the meeting.
+                  <span className="font-bold text-[#5b4fcf]">
+                    So that I can...
+                  </span>{" "}
+                  ensure follow-through and accountability before entering the
+                  meeting.
                 </p>
-                <p style={{ fontSize: "18px", lineHeight: "1.8" }}>
-                  <span className="font-bold">Example:</span> "Show me a list of
-                  tasks from last Thursday's sync, who owns them, and any
-                  overdue items I should bring up."
+                <p
+                  className="text-[#1a1a1a]"
+                  style={{ fontSize: "18px", lineHeight: "1.8" }}
+                >
+                  <span className="font-bold text-[#5b4fcf]">Example:</span>{" "}
+                  "Show me a list of tasks from last Thursday's sync, who owns
+                  them, and any overdue items I should bring up."
                 </p>
               </div>
 
               {/* Job Story 4 */}
               <div className="border-l-2 border-gray-300 pl-6">
                 <p
-                  className="mb-4"
+                  className="mb-4 text-[#1a1a1a]"
                   style={{ fontSize: "18px", lineHeight: "1.8" }}
                 >
-                  <span className="font-bold">I want to...</span> generate a
-                  structured agenda based on meeting history and shared
-                  documents
+                  <span className="font-bold text-[#5b4fcf]">I want to...</span>{" "}
+                  generate a structured agenda based on meeting history and
+                  shared documents
                 </p>
                 <p
-                  className="mb-4"
+                  className="mb-4 text-[#1a1a1a]"
                   style={{ fontSize: "18px", lineHeight: "1.8" }}
                 >
-                  <span className="font-bold">So that I can...</span> run a more
-                  focused, organized meeting without starting the planning
-                  process from scratch.
+                  <span className="font-bold text-[#5b4fcf]">
+                    So that I can...
+                  </span>{" "}
+                  run a more focused, organized meeting without starting the
+                  planning process from scratch.
                 </p>
-                <p style={{ fontSize: "18px", lineHeight: "1.8" }}>
-                  <span className="font-bold">Example:</span> "Propose a draft
-                  agenda with sections for updates, decisions, blockers, and
-                  next steps."
+                <p
+                  className="text-[#1a1a1a]"
+                  style={{ fontSize: "18px", lineHeight: "1.8" }}
+                >
+                  <span className="font-bold text-[#5b4fcf]">Example:</span>{" "}
+                  "Propose a draft agenda with sections for updates, decisions,
+                  blockers, and next steps."
                 </p>
               </div>
             </div>
