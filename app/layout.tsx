@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Tobi Odebo | Product Manager & Software Engineer",
+  title: "Tobi Odebo",
   description:
     "Product Manager and Software Engineer passionate about building impactful digital experiences. Specializing in full-stack development, data analytics, and AI.",
 };

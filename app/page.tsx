@@ -191,12 +191,13 @@ export default function Home() {
               <div className="md:w-3/4">
                 <div className="space-y-4 md:space-y-6 text-base md:text-lg leading-relaxed text-white">
                   <p>
-                    I'm Tobi Odebo — a technologist, analyst, and product-minded
-                    builder who enjoys turning ideas into practical, high-impact
-                    solutions. My experience spans software engineering and data
-                    analytics, and I'm drawn to product management because it
-                    sits at the intersection of problem-solving, user
-                    understanding, and strategic decision-making.
+                    I'm Oluwatobiloba (Tobi) Odebo — a technologist, analyst,
+                    and product-minded builder who enjoys turning ideas into
+                    practical, high-impact solutions. My experience spans
+                    software engineering and data analytics, and I'm drawn to
+                    product management because it sits at the intersection of
+                    problem-solving, user understanding, and strategic
+                    decision-making.
                   </p>
                   <p>
                     Across my engineering work, I've been most energized by
