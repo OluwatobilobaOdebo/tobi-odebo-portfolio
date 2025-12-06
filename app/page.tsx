@@ -502,10 +502,11 @@ export default function Home() {
                 <ProjectCard
                   title="5-Year Real Estate Price Prediction Dashboard"
                   description="Real estate price forecasting"
-                  image="/image-coming-soon-placeholder-1.png"
+                  image="/baltimore_main_dashboard.png"
                   isActive={false}
                   onClick={() => {}}
-                  comingSoon
+                  link="/price_prediction"
+                  tagline="Streamlit | Data Analytics"
                 />
                 <ProjectCard
                   title="AI Startup Failure Prediction"
