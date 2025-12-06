@@ -541,40 +541,21 @@ export default function PricePredictionProject() {
                   className="space-y-2 text-[#4a4a4a]"
                   style={{ fontSize: "16px" }}
                 >
-                  <li>Zillow ZHVI (raw CSV ~110MB)</li>
+                  <li>
+                    Zillow ZHVI (
+                    <a
+                      href="https://www.zillow.com/research/data/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-600 hover:underline"
+                    >
+                      https://www.zillow.com/research/data/
+                    </a>
+                    )
+                  </li>
                   <li>Processed datasets exported for analysis</li>
                   <li>Dashboard-ready data outputs</li>
                 </ul>
-              </div>
-
-              {/* Version Control */}
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 md:col-span-2">
-                <h3
-                  className="font-bold uppercase tracking-[0.15em] text-cyan-600 mb-4"
-                  style={{ fontSize: "13px" }}
-                >
-                  Project Structure
-                </h3>
-                <div className="bg-[#1a1a1a] rounded-lg p-4 font-mono text-sm text-gray-300">
-                  <div className="space-y-1">
-                    <p>
-                      <span className="text-cyan-400">app/</span> → Streamlit
-                      application
-                    </p>
-                    <p>
-                      <span className="text-cyan-400">data/processed/</span> →
-                      Clean, model-ready datasets
-                    </p>
-                    <p>
-                      <span className="text-cyan-400">notebooks/</span> → Full
-                      analysis and modeling
-                    </p>
-                    <p>
-                      <span className="text-cyan-400">reports/figures/</span> →
-                      Exported charts for documentation
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
