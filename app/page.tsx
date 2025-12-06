@@ -506,7 +506,7 @@ export default function Home() {
                   isActive={false}
                   onClick={() => {}}
                   link="/price_prediction"
-                  tagline="Streamlit | Data Analytics"
+                  tagline="Streamlit Dashboard"
                 />
                 <ProjectCard
                   title="AI Startup Failure Prediction"
