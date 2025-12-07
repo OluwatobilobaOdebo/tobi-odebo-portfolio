@@ -99,7 +99,7 @@ export default function PricePredictionProject() {
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://baltimore-real-estate-price-forecast-jlqmktvxfbzn6vjgxvuc6f.streamlit.app/"
+                href="https://tobis-baltimore-real-estate-price-forecast.streamlit.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors"

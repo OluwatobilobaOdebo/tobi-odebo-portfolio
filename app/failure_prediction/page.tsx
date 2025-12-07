@@ -98,7 +98,7 @@ export default function FailurePredictionProject() {
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://oluwatobilobaodebo-ai-startup-failure-p-appstreamlit-app-uvvlo0.streamlit.app/"
+                href="https://tobis-ai-startup-failure-prediction.streamlit.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors"
