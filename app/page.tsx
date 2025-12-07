@@ -524,10 +524,11 @@ export default function Home() {
                 <ProjectCard
                   title="Customer Churn Prediction"
                   description="Churn prediction analysis"
-                  image="/image-coming-soon-placeholder-1.png"
+                  image="/customer_churn_main_dashboard.png"
                   isActive={false}
                   onClick={() => {}}
-                  comingSoon
+                  link="/churn_prediction"
+                  tagline="Streamlit Dashboard"
                 />
               </div>
             </div>
