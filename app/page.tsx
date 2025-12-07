@@ -486,11 +486,12 @@ export default function Home() {
                   image="/image-coming-soon-placeholder-1.png"
                   isActive={false}
                   onClick={() => {}}
+                  link="/tax"
                   logoImage="/cash_picture.png"
                   secondLogoImage="/ai_icon.png"
                   logoBgGradient="from-emerald-800 via-green-700 to-teal-800"
+                  buttonText="View Case Study"
                   tagline="Product Case Study"
-                  comingSoon
                 />
               </div>
             </div>

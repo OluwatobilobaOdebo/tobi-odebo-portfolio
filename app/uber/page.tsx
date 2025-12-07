@@ -1533,7 +1533,7 @@ export default function UberCaseStudy() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto flex justify-center">
             <Link
-              href="/google-calendar"
+              href="/tax"
               className="px-8 py-4 border-2 border-[#000000] text-[#000000] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#000000] hover:text-white cursor-pointer"
               style={{ fontSize: "14px", letterSpacing: "0.2em" }}
             >
