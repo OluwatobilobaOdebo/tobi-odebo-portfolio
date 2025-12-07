@@ -419,7 +419,7 @@ export default function Home() {
               </h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 <ProjectCard
-                  title="Curated"
+                  title="Curated (E-Commerce Site)"
                   description="Complete e-commerce solution"
                   image="/my-ecommerce-platform-interface.png"
                   isActive={false}
@@ -429,7 +429,7 @@ export default function Home() {
                   tagline="Full-Stack Project"
                 />
                 <ProjectCard
-                  title="ResumeAI"
+                  title="ResumeAI (AI Resume Tailor & Job Tracker)"
                   description="AI-powered resume and job tracking tool"
                   image="/my-ai-resume-interface.png"
                   isActive={false}
