@@ -8,7 +8,7 @@ export const projects = [
     github: "",
   },
   {
-    title: "Full-Stack E-Commerce Platform",
+    title: "Curated",
     description:
       "Angular + Node.js + PostgreSQL marketplace with authentication, cart, search, and admin dashboard.",
     tech: ["Angular", "Node.js", "Express", "PostgreSQL"],

@@ -419,21 +419,24 @@ export default function Home() {
               </h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 <ProjectCard
-                  title="Full-Stack E-Commerce Platform"
+                  title="Curated"
                   description="Complete e-commerce solution"
                   image="/my-ecommerce-platform-interface.png"
                   isActive={false}
                   onClick={() => {}}
                   link="https://fullstack-ecommerce-site-tawny.vercel.app/"
+                  githubLink="https://github.com/OluwatobilobaOdebo/fullstack-ecommerce-site"
                   tagline="Full-Stack Project"
                 />
                 <ProjectCard
-                  title="AI Resume Tailor + Job Tracker"
+                  title="ResumeAI"
                   description="AI-powered resume and job tracking tool"
-                  image="/image-coming-soon-placeholder-1.png"
+                  image="/my-ai-resume-interface.png"
                   isActive={false}
                   onClick={() => {}}
-                  comingSoon
+                  link="https://ai-resume-tracker-six.vercel.app/"
+                  githubLink="https://github.com/OluwatobilobaOdebo/ai-resume-tracker"
+                  tagline="Full-Stack Project"
                 />
                 <ProjectCard
                   title="Real Estate Property Marketplace"
@@ -997,6 +1000,7 @@ interface ProjectCardProps {
   onClick: () => void;
   comingSoon?: boolean;
   link?: string;
+  githubLink?: string;
   logoImage?: string;
   secondLogoImage?: string;
   logoBgColor?: string;
@@ -1014,6 +1018,7 @@ function ProjectCard({
   onClick,
   comingSoon,
   link,
+  githubLink,
   logoImage,
   secondLogoImage,
   logoBgColor,
@@ -1121,22 +1126,36 @@ function ProjectCard({
         <h4 className="text-base md:text-lg font-bold mb-3 leading-tight text-balance">
           {title}
         </h4>
-        {link ? (
-          <a
-            href={link}
-            target={link.startsWith("/") ? "_self" : "_blank"}
-            rel="noopener noreferrer"
-            className="mt-auto px-4 md:px-6 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 text-xs md:text-sm tracking-wide inline-flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {buttonText}
-            <ArrowUpRight className="w-4 h-4" />
-          </a>
-        ) : comingSoon ? (
-          <button className="mt-auto px-4 md:px-6 py-2.5 border-2 border-gray-300 text-gray-500 rounded-lg font-medium cursor-default bg-gray-50">
-            Coming Soon
-          </button>
-        ) : null}
+        <div className="mt-auto flex items-center gap-2">
+          {link ? (
+            <a
+              href={link}
+              target={link.startsWith("/") ? "_self" : "_blank"}
+              rel="noopener noreferrer"
+              className="flex-1 px-4 md:px-6 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 text-xs md:text-sm tracking-wide inline-flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {buttonText}
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          ) : comingSoon ? (
+            <button className="flex-1 px-4 md:px-6 py-2.5 border-2 border-gray-300 text-gray-500 rounded-lg font-medium cursor-default bg-gray-50">
+              Coming Soon
+            </button>
+          ) : null}
+          {githubLink && (
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all duration-300 shadow-md hover:shadow-lg"
+              onClick={(e) => e.stopPropagation()}
+              aria-label="View on GitHub"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
