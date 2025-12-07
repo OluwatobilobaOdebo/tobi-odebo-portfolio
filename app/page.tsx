@@ -511,10 +511,11 @@ export default function Home() {
                 <ProjectCard
                   title="AI Startup Failure Prediction"
                   description="Startup failure prediction"
-                  image="/image-coming-soon-placeholder-1.png"
+                  image="/ai_startup_main_dashboard.png"
                   isActive={false}
                   onClick={() => {}}
-                  comingSoon
+                  link="/failure_prediction"
+                  tagline="Streamlit Dashboard"
                 />
                 <ProjectCard
                   title="Customer Churn Prediction"
