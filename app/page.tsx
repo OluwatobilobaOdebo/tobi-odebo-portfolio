@@ -439,12 +439,14 @@ export default function Home() {
                   tagline="Full-Stack Project"
                 />
                 <ProjectCard
-                  title="Real Estate Property Marketplace"
-                  description="Real estate marketplace platform"
-                  image="/image-coming-soon-placeholder-1.png"
+                  title="Haven Estate (AI Real Estate Marketplace)"
+                  description="AI-powered real estate marketplace"
+                  image="/my-ai-real-estate-marketplace.png"
                   isActive={false}
                   onClick={() => {}}
-                  comingSoon
+                  link="https://ai-real-estate-marketplace.vercel.app/"
+                  githubLink="https://github.com/OluwatobilobaOdebo/ai-real-estate-marketplace"
+                  tagline="Full-Stack Project"
                 />
               </div>
             </div>
