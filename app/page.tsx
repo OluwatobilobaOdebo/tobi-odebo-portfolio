@@ -577,21 +577,22 @@ export default function Home() {
                 logo="/deep_learning_ai.jpg"
               />
               <CertificationCard
-                title="Natural Language Processing Specialization"
-                provider="DeepLearning.AI"
-                status="In Progress (will complete by Dec 7th)"
-                logo="/deep_learning_ai.jpg"
-              />
-              <CertificationCard
                 title="Product Management Certification"
                 provider="Product School"
-                status="Planned Dec 8th - 12th"
+                status="Issued Dec 2025"
+                link="https://certificate.productschool.com/5b359cef-ffeb-42ab-86dc-0d982aae51f0#acc.Iq9QY4Ve"
                 logo="/product_school_logo.jpg"
+              />
+              <CertificationCard
+                title="Natural Language Processing Specialization"
+                provider="DeepLearning.AI"
+                status="In Progress"
+                logo="/deep_learning_ai.jpg"
               />
               <CertificationCard
                 title="IBM AI Product Manager Professional Certificate"
                 provider="IBM / Coursera"
-                status="After Dec 12th"
+                status="After completion of Natural Language Processing Specialization"
                 logo="/ibm_logo.png"
               />
             </div>
