@@ -586,7 +586,8 @@ export default function Home() {
               <CertificationCard
                 title="Natural Language Processing Specialization"
                 provider="DeepLearning.AI"
-                status="In Progress"
+                status="Issued Dec 2025"
+                link="https://www.coursera.org/account/accomplishments/specialization/7NOOOZ638CVE"
                 logo="/deep_learning_ai.jpg"
               />
               <CertificationCard
