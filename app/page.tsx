@@ -591,9 +591,15 @@ export default function Home() {
                 logo="/deep_learning_ai.jpg"
               />
               <CertificationCard
+                title="Generative AI Leader"
+                provider="Google Cloud"
+                status="In Progress"
+                logo="/google_cloud.jpg"
+              />
+              <CertificationCard
                 title="IBM AI Product Manager Professional Certificate"
                 provider="IBM / Coursera"
-                status="After completion of Natural Language Processing Specialization"
+                status="After completion of Generative AI Leader"
                 logo="/ibm_logo.png"
               />
             </div>
