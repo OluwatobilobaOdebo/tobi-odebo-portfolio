@@ -1215,7 +1215,7 @@ export default function TaxCaseStudy() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center">
             <a
-              href="https://www.linkedin.com/in/oluwatobiloba-odebo-csm%C2%AE-cspo%C2%AE-b025361a4/"
+              href="https://www.linkedin.com/in/oluwatobiloba-odebo-b025361a4/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#a8a8a8] text-sm font-medium tracking-[0.3em] hover:text-white transition-colors mb-6"

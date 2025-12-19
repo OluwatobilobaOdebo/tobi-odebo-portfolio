@@ -880,7 +880,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center justify-center md:justify-start gap-4 flex-wrap">
                   <a
-                    href="https://www.linkedin.com/in/oluwatobiloba-odebo-csm%C2%AE-cspo%C2%AE-b025361a4/"
+                    href="https://www.linkedin.com/in/oluwatobiloba-odebo-b025361a4/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#0077b5] hover:bg-[#005885] text-white font-bold px-3 py-2 rounded-md transition-colors"
@@ -970,7 +970,7 @@ export default function Home() {
                 <h3 className="font-bold mb-3 text-gray-900">Connect</h3>
                 <div className="flex gap-6">
                   <a
-                    href="https://www.linkedin.com/in/oluwatobiloba-odebo-csm%C2%AE-cspo%C2%AE-b025361a4/"
+                    href="https://www.linkedin.com/in/oluwatobiloba-odebo-b025361a4/"
                     className="text-gray-700 hover:text-amber-700 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
