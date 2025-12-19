@@ -97,12 +97,12 @@ export default function GoogleCalendarCaseStudy() {
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                But here's the thing: Calendar tells you *when* something is
-                happening, not *what* it's actually about. You get a title,
-                maybe a link, and that's it. I kept noticing that before any
-                meeting, I'd spend 5-10 minutes scrambling through Gmail and
-                Drive trying to remember what we discussed last time. That
-                friction felt like a problem worth solving.
+                But here's the thing: Calendar tells you <em>when</em> something
+                is happening, not <em>what</em> it&apos;s actually about. You
+                get a title, maybe a link, and that's it. I kept noticing that
+                before any meeting, I'd spend 5-10 minutes scrambling through
+                Gmail and Drive trying to remember what we discussed last time.
+                That friction felt like a problem worth solving.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
@@ -178,7 +178,7 @@ export default function GoogleCalendarCaseStudy() {
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
                 I looked at competitors — Outlook, Calendly, Motion, Reclaim.ai
                 — and while they're good at scheduling, none of them actually
-                help you *prepare*. That gap felt significant.
+                help you <em>prepare</em>. That gap felt significant.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
@@ -237,8 +237,9 @@ export default function GoogleCalendarCaseStudy() {
                 <p>
                   I started by looking at where the pain actually shows up.
                   Calendar is great at scheduling — but when it comes to
-                  actually knowing what a meeting is *about*, you're on your
-                  own. People spend way too much time hunting for context.
+                  actually knowing what a meeting is <em>about</em>, you&apos;re
+                  on your own. People spend way too much time hunting for
+                  context.
                 </p>
 
                 <p>Three things kept coming up:</p>
