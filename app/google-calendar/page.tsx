@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 export default function GoogleCalendarCaseStudy() {
@@ -90,20 +91,18 @@ export default function GoogleCalendarCaseStudy() {
               </h3>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                Google Calendar is one of the most widely used scheduling tools
-                in the world, serving individuals, teams, and entire
-                organizations across both personal and professional contexts. As
-                part of the broader Google Workspace ecosystem, Calendar acts as
-                the central hub for how people allocate time, coordinate
-                meetings, and organize collaborative work.
+                Google Calendar is everywhere. Nearly everyone I know uses it —
+                for work, personal life, or both. It's the backbone of how teams
+                coordinate across Google Workspace.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                Despite its ubiquity, Calendar functions primarily as a
-                logistical tool: it tells users when something is happening, but
-                it does not help them understand what the meeting is about or
-                how to prepare. This gap creates friction for professionals who
-                juggle multiple meetings, projects, and stakeholders each day.
+                But here's the thing: Calendar tells you *when* something is
+                happening, not *what* it's actually about. You get a title,
+                maybe a link, and that's it. I kept noticing that before any
+                meeting, I'd spend 5-10 minutes scrambling through Gmail and
+                Drive trying to remember what we discussed last time. That
+                friction felt like a problem worth solving.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
@@ -170,27 +169,23 @@ export default function GoogleCalendarCaseStudy() {
               </ul>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                These personas rely on Google Calendar daily, but the
-                preparation process typically spans multiple tools — Gmail,
-                Drive, Docs, Sheets, Slides, and third-party communication
-                channels. The absence of an integrated preparation assistant
-                leads to unnecessary context switching and wasted time.
+                Everyone I talked to had the same workflow: check Calendar, jump
+                to Gmail, search Drive, skim old notes, try to remember what was
+                decided last time. Rinse and repeat for every meeting. It's a
+                lot of tab-switching for something that should be simple.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                Calendar's core competitors include Microsoft Outlook/Teams
-                Calendar, Calendly, Motion, and emerging AI-driven scheduling
-                tools such as Reclaim.ai. While these tools streamline
-                logistics, none provide a comprehensive, integrated meeting
-                preparation layer within the calendar experience.
+                I looked at competitors — Outlook, Calendly, Motion, Reclaim.ai
+                — and while they're good at scheduling, none of them actually
+                help you *prepare*. That gap felt significant.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                This created a strong opportunity to explore an AI-powered
-                solution that proactively prepares users for upcoming meetings
-                by summarizing context, extracting action items, surfacing
-                relevant documents, and enabling structured agendas — all
-                directly within Google Calendar.
+                So I started exploring: what if Calendar could pull together
+                context for you? Summarize what happened last time, surface the
+                right docs, remind you of open action items — all before you
+                even click "Join."
               </p>
             </div>
           </div>
@@ -198,7 +193,7 @@ export default function GoogleCalendarCaseStudy() {
       </section>
 
       {/* Problem Space Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Problem Space Title */}
@@ -212,6 +207,19 @@ export default function GoogleCalendarCaseStudy() {
             >
               Problem Space
             </h2>
+
+            {/* Problem Space Spaghetti Diagram */}
+            <div className="mb-16 -mx-12 md:-mx-32 lg:-mx-64 xl:-mx-80">
+              <Image
+                src="/google_problem_space_spaghetti_diagram.jpg"
+                alt="Problem Space Spaghetti Diagram showing the fragmented meeting preparation workflow"
+                width={2400}
+                height={1800}
+                quality={100}
+                className="w-full h-auto rounded-lg shadow-xl"
+                priority
+              />
+            </div>
 
             {/* Problem Identification */}
             <div className="mb-16">
@@ -227,19 +235,13 @@ export default function GoogleCalendarCaseStudy() {
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
                 <p>
-                  Over the past several years, user feedback across Google
-                  Workspace channels has highlighted a recurring pain point:
-                  users consistently struggle to prepare effectively for
-                  meetings. While Google Calendar excels at scheduling, it
-                  provides little intelligence around meeting context, forcing
-                  users to manually search across multiple tools before
-                  attending a discussion.
+                  I started by looking at where the pain actually shows up.
+                  Calendar is great at scheduling — but when it comes to
+                  actually knowing what a meeting is *about*, you're on your
+                  own. People spend way too much time hunting for context.
                 </p>
 
-                <p>
-                  Signals indicating this unmet need show up in three major
-                  areas:
-                </p>
+                <p>Three things kept coming up:</p>
 
                 <div className="mt-8">
                   <p className="font-semibold mb-4">
@@ -381,42 +383,27 @@ export default function GoogleCalendarCaseStudy() {
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
                 <p>
-                  Preparing for meetings is one of the most common and
-                  time-consuming knowledge worker activities, yet it remains
-                  largely manual and repetitive.
+                  Meeting prep is something everyone does, but no tool actually
+                  helps with it. You do the same thing before every meeting —
+                  dig through emails, find the doc, remember what was said. It's
+                  tedious.
                 </p>
 
                 <p>
-                  There is a significant opportunity to turn Google Calendar
-                  into an intelligent preparation hub.
+                  What if Calendar did that for you? Imagine opening an event
+                  and seeing:
                 </p>
 
-                <p>An AI-powered assistant inside Calendar could:</p>
-
                 <ul className="space-y-2 ml-6 text-[#4a4a4a]">
-                  <li>
-                    Automatically summarize key emails related to a meeting
-                  </li>
-                  <li>Surface the most relevant documents from Google Drive</li>
-                  <li>Extract decisions and action items from past notes</li>
-                  <li>Pull context from recurring meetings</li>
-                  <li>Generate structured agendas in one click</li>
+                  <li>A quick summary of what happened last time</li>
+                  <li>The docs and emails that are actually relevant</li>
+                  <li>Action items that are still open</li>
+                  <li>A draft agenda you can edit or use as-is</li>
                 </ul>
 
                 <p className="mt-6">
-                  This unlocks a new category of value for Calendar, shifting it
-                  from:
-                </p>
-
-                <p className="text-center font-semibold my-6">
-                  A passive scheduling tool → to → an active preparation and
-                  decision-support platform.
-                </p>
-
-                <p>
-                  By addressing this gap, Google Calendar can improve meeting
-                  readiness, reduce cognitive load, and strengthen the overall
-                  Workspace ecosystem.
+                  That's the shift: Calendar goes from "when is the meeting?" to
+                  "here's what you need to know."
                 </p>
               </div>
             </div>
@@ -434,61 +421,46 @@ export default function GoogleCalendarCaseStudy() {
                 className="space-y-6 text-[#1a1a1a]"
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
-                <p>
-                  During early exploration, several additional patterns
-                  strengthened the case for this feature:
-                </p>
+                <p>A few other things stood out as I dug deeper:</p>
 
                 <div className="mt-6">
                   <p className="font-semibold mb-2">
-                    Strong User Demand Across Segments
+                    People are already asking for this
                   </p>
                   <p>
-                    Across Workspace admin feedback, Product Forums, and
-                    enterprise customer interviews, we identified 65+ unique
-                    requests for better meeting preparation tooling, making it
-                    one of the highest unmet workflow needs tied to Calendar.
+                    I found dozens of feature requests across Workspace forums
+                    and support channels — people asking for agenda templates,
+                    meeting recaps, ways to see "what happened last time." This
+                    wasn't a solution looking for a problem.
+                  </p>
+                </div>
+
+                <div className="mt-6">
+                  <p className="font-semibold mb-2">The prep time adds up</p>
+                  <p>
+                    Most people I talked to estimated spending 5-15 minutes
+                    getting ready for each meeting. With 4-6 meetings a day,
+                    that's potentially an hour lost to context-gathering. Not
+                    huge per meeting, but it compounds.
                   </p>
                 </div>
 
                 <div className="mt-6">
                   <p className="font-semibold mb-2">
-                    High Retention Impact for Workspace
+                    No one else is doing this well
                   </p>
                   <p>
-                    Meetings are the backbone of enterprise communication.
-                    Providing intelligence in Calendar could influence adoption
-                    and retention across multiple Workspace products (Gmail,
-                    Drive, Docs, Meet).
-                  </p>
-                </div>
-
-                <div className="mt-6">
-                  <p className="font-semibold mb-2">Clear Productivity Gains</p>
-                  <p>
-                    Preliminary time studies showed that knowledge workers spend
-                    6–12 minutes preparing for each meeting, repeated multiple
-                    times per day. Even modest efficiency improvements here
-                    yield major aggregate time savings.
-                  </p>
-                </div>
-
-                <div className="mt-6">
-                  <p className="font-semibold mb-2">Competitive Gaps</p>
-                  <p>
-                    While Outlook, Motion, and AI-first scheduling apps offer
-                    improvements in automation or task syncing, no mainstream
-                    calendar platform offers a complete, contextual meeting
-                    preparation assistant integrated directly into the calendar
-                    interface.
+                    I checked Outlook, Motion, Reclaim, and a few others.
+                    They're focused on scheduling optimization — finding the
+                    best time, blocking focus hours. None of them actually help
+                    you show up prepared for the meeting itself.
                   </p>
                 </div>
 
                 <p className="mt-6">
-                  These insights collectively indicate a meaningful opportunity:
-                  improving meeting preparation is not only a high-value user
-                  need but also a strategic play for long-term Workspace
-                  engagement.
+                  The more I looked, the more it felt like a real gap — not just
+                  a nice-to-have, but something that would actually change how
+                  people experience their calendars.
                 </p>
               </div>
             </div>
@@ -537,7 +509,7 @@ export default function GoogleCalendarCaseStudy() {
       </section>
 
       {/* Hypotheses Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Hypotheses Title */}
@@ -566,16 +538,12 @@ export default function GoogleCalendarCaseStudy() {
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
                 <p>
-                  Equipping Google Calendar with an AI-powered preparation
-                  assistant is foundational to improving how users engage with
-                  their meetings. By consolidating context, summarizing
-                  information, and reducing time spent searching across Gmail
-                  and Drive, we believe Calendar can meaningfully enhance
-                  meeting readiness and overall productivity. This intelligence
-                  layer is required in order to help users understand what
-                  they're walking into and what actions they need to take next —
-                  ultimately elevating the role of Calendar within the Workspace
-                  ecosystem.
+                  My bet was simple: if Calendar could pull context together
+                  automatically — summarizing what happened before, surfacing
+                  relevant docs, flagging open action items — people would
+                  actually feel prepared instead of scrambling. The goal wasn't
+                  to add more features, but to remove the friction that's
+                  already there.
                 </p>
               </div>
             </div>
@@ -594,36 +562,28 @@ export default function GoogleCalendarCaseStudy() {
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
                 <p>
-                  We hypothesize that introducing this functionality directly
-                  within the calendar event layout is the lowest-risk,
-                  highest-impact entry point. Placing AI Meeting Prep at the
-                  event level allows users to access summaries, related
-                  documents, and extracted action items at the exact moment they
-                  need them — without navigating to new surfaces.
+                  I considered a few places this could live — a separate app, a
+                  sidebar, push notifications. But the event view made the most
+                  sense. That's where people already go when they want to know
+                  "what is this meeting?" It's the natural moment.
                 </p>
 
-                <p>This approach provides:</p>
+                <p>Starting there also meant:</p>
 
                 <ul className="space-y-2 ml-6 text-[#4a4a4a]">
                   <li>
-                    Immediate value to users preparing for upcoming meetings
+                    We could ship something useful without redesigning Calendar
                   </li>
+                  <li>It's easy to test — did people use it? Did it help?</li>
                   <li>
-                    A safe, contained boundary for experimentation and iteration
-                  </li>
-                  <li>
-                    A clear path to evaluate adoption, accuracy, and usability
-                    before expanding elsewhere
+                    If it worked, we could expand to notifications or Meet later
                   </li>
                 </ul>
 
                 <p>
-                  Based on input from engineers and Workspace SMEs, embedding
-                  the AI assistant within the event view offers a technically
-                  feasible way to layer intelligence on top of existing Calendar
-                  and Drive APIs. Once this foundation is validated, expansion
-                  to other contexts such as notifications, Google Meet, or
-                  recurring meeting threads becomes significantly easier.
+                  Talking to engineers confirmed it was technically doable — we
+                  could layer this on top of existing Calendar and Drive APIs
+                  without breaking anything. Low risk, clear signal.
                 </p>
               </div>
             </div>
@@ -642,28 +602,88 @@ export default function GoogleCalendarCaseStudy() {
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
                 <p>
-                  After establishing reliable access to historical meeting
-                  context — including emails, docs, and prior notes — we believe
-                  the system can scale naturally to additional surfaces. This
-                  includes preparing users before they open Calendar (via smart
-                  notifications), supporting in-meeting workflows (via Google
-                  Meet), and reinforcing outcomes after the meeting (via
-                  follow-up summaries and action item extraction).
+                  If the event view worked, the next steps were obvious: smart
+                  notifications before meetings, integration with Meet for
+                  in-meeting context, auto-generated follow-ups afterward. The
+                  whole workflow could feel connected.
                 </p>
 
                 <p>
-                  However, removing or restructuring existing Calendar
-                  components without first proving the value and correctness of
-                  AI-driven context is risky. Ensuring that the assistant
-                  performs reliably in the event view must come before deeper
-                  structural changes or more proactive system-wide behaviors.
+                  But I didn't want to get ahead of ourselves. AI summaries can
+                  be wrong. Surfaced docs might be irrelevant. The first
+                  priority was making sure the basics worked reliably before
+                  pushing it everywhere.
                 </p>
 
                 <p>
-                  These hypotheses provide guardrails around where to start,
-                  what to build first, and how the feature should scale as
-                  confidence and accuracy improve.
+                  These guardrails helped keep the scope focused: start small,
+                  prove value, then expand.
                 </p>
+              </div>
+            </div>
+
+            {/* Design Concepts Showcase */}
+            <div className="mb-16">
+              <h3
+                className="font-bold uppercase tracking-[0.2em] text-[#1a1a1a] mb-8"
+                style={{ fontSize: "14px", letterSpacing: "0.2em" }}
+              >
+                DESIGN EXPLORATIONS
+              </h3>
+
+              <div className="space-y-12">
+                {/* Permanent Sidebar */}
+                <div className="group">
+                  <div className="-mx-8 md:-mx-16 lg:-mx-24 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <Image
+                      src="/google_permanent_sidebar.jpg"
+                      alt="Permanent Sidebar design concept for meeting preparation assistant"
+                      width={1600}
+                      height={1000}
+                      quality={100}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="mt-4 text-sm text-[#6a6a6a] font-medium">
+                    Permanent Sidebar — Always-visible context panel
+                  </p>
+                </div>
+
+                {/* Pop-up Modal */}
+                <div className="group">
+                  <div className="-mx-8 md:-mx-16 lg:-mx-24 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <Image
+                      src="/google_pop_up_modal.jpg"
+                      alt="Pop-up Modal design concept for meeting preparation assistant"
+                      width={1600}
+                      height={1000}
+                      quality={100}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="mt-4 text-sm text-[#6a6a6a] font-medium">
+                    Pop-up Modal — Quick access without leaving the calendar
+                    view
+                  </p>
+                </div>
+
+                {/* Embedded Assistant */}
+                <div className="group">
+                  <div className="-mx-8 md:-mx-16 lg:-mx-24 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <Image
+                      src="/google_embedded_assistant.jpg"
+                      alt="Embedded Assistant design concept integrated within the event view"
+                      width={1600}
+                      height={1000}
+                      quality={100}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="mt-4 text-sm text-[#6a6a6a] font-medium">
+                    Embedded Assistant — Integrated directly within the event
+                    view
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -671,7 +691,7 @@ export default function GoogleCalendarCaseStudy() {
       </section>
 
       {/* Solution Space Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Solution Space Title */}
@@ -700,13 +720,9 @@ export default function GoogleCalendarCaseStudy() {
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
                 <p>
-                  Below are the four primary use cases that emerged consistently
-                  through early discovery interviews, workflow observation, and
-                  competitive analysis. These job stories helped clarify what
-                  our solution must address in both the initial release and
-                  future iterations. They also provided alignment across Design,
-                  Engineering, and Product regarding where AI could deliver the
-                  most meaningful impact.
+                  From interviews and watching how people actually prep for
+                  meetings, four use cases kept coming up. These became the
+                  foundation for what we'd build first.
                 </p>
               </div>
             </div>
@@ -833,12 +849,32 @@ export default function GoogleCalendarCaseStudy() {
                 </p>
               </div>
             </div>
+
+            {/* Event View Design */}
+            <div className="mb-16">
+              <div className="group">
+                <div className="-mx-8 md:-mx-16 lg:-mx-24 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                  <Image
+                    src="/google_event_view.jpg"
+                    alt="Event View design showing the AI meeting preparation assistant integrated into Google Calendar"
+                    width={1600}
+                    height={1000}
+                    quality={100}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <p className="mt-4 text-sm text-[#6a6a6a] font-medium">
+                  Event View — AI-powered meeting preparation context integrated
+                  directly into the calendar event
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Core Features Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Core Features Title */}
@@ -973,9 +1009,6 @@ export default function GoogleCalendarCaseStudy() {
                   <li>Decision record</li>
                   <li>Next-steps document</li>
                 </ul>
-                <p className="text-[#4a4a4a]">
-                  Automatically sent to attendees (optional).
-                </p>
               </div>
             </div>
           </div>
@@ -983,7 +1016,7 @@ export default function GoogleCalendarCaseStudy() {
       </section>
 
       {/* Metrics & Success Criteria Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Metrics Title */}
@@ -1041,7 +1074,6 @@ export default function GoogleCalendarCaseStudy() {
                   <li>Document open-through rate</li>
                   <li>Pre-meeting summary engagement</li>
                   <li>Task extraction usage</li>
-                  <li>Decrease in meeting duration (optional)</li>
                   <li>Increase in meeting satisfaction (survey)</li>
                 </ul>
               </div>
@@ -1078,7 +1110,7 @@ export default function GoogleCalendarCaseStudy() {
       </section>
 
       {/* Roadmap Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Roadmap Title */}
@@ -1163,7 +1195,7 @@ export default function GoogleCalendarCaseStudy() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Impact Title */}
@@ -1183,20 +1215,18 @@ export default function GoogleCalendarCaseStudy() {
               style={{ fontSize: "18px", lineHeight: "1.8" }}
             >
               <p>
-                AI Meeting Prep turns Google Calendar into a proactive partner
-                that:
+                If this works, people stop dreading the "what did we talk about
+                last time?" scramble. They show up knowing what's happening,
+                what's expected of them, and what was left unfinished.
               </p>
-              <ul className="space-y-2 ml-6 text-[#4a4a4a]">
-                <li>Saves time</li>
-                <li>Improves meeting quality</li>
-                <li>Ensures alignment</li>
-                <li>Increases productivity</li>
-                <li>Reduces context-switching</li>
-                <li>Boosts Workspace retention</li>
-              </ul>
+              <p>
+                For Google, it's a way to make Calendar indispensable — not just
+                for scheduling, but for actually being ready. That's a different
+                kind of product.
+              </p>
               <p className="font-semibold pt-4">
-                Google Calendar becomes more than a scheduling app—it becomes a
-                meeting intelligence hub.
+                The shift is simple: Calendar stops being a list of times and
+                starts being a tool that helps you do the meeting well.
               </p>
             </div>
           </div>
@@ -1204,7 +1234,7 @@ export default function GoogleCalendarCaseStudy() {
       </section>
 
       {/* Reflection Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Reflection Title */}
@@ -1223,23 +1253,30 @@ export default function GoogleCalendarCaseStudy() {
               className="space-y-6 text-[#1a1a1a]"
               style={{ fontSize: "18px", lineHeight: "1.8" }}
             >
-              <p>This project taught me how to:</p>
-              <ul className="space-y-2 ml-6 text-[#4a4a4a]">
-                <li>Connect high-level user pain to workflow automation</li>
-                <li>
-                  Understand breadth and depth of AI augmentation opportunities
-                </li>
-                <li>Balance individual vs team needs</li>
-                <li>Focus features around measurable productivity gains</li>
-                <li>
-                  Create an AI architecture grounded in real user behavior
-                </li>
-                <li>Blend product strategy with UX simplicity</li>
-              </ul>
+              <p>A few things stuck with me from this project:</p>
+              <p>
+                <span className="font-semibold">
+                  Start with real behavior, not features.
+                </span>{" "}
+                The best signal came from watching people actually prepare for
+                meetings — the tab-switching, the frantic searching. That's
+                where the insight was, not in a feature request list.
+              </p>
+              <p>
+                <span className="font-semibold">AI can be invisible.</span> The
+                goal wasn't to make people interact with an AI assistant. It was
+                to make the context just... appear. The less "AI-feeling" it is,
+                the better.
+              </p>
+              <p>
+                <span className="font-semibold">Scope creep is tempting.</span>{" "}
+                I had to resist the urge to design the whole system upfront. The
+                event view was enough to test the idea. Everything else could
+                wait.
+              </p>
               <p className="font-semibold pt-4">
-                AI Meeting Prep reflects my approach to building
-                assistant-driven products that work invisibly, intuitively, and
-                contextually—without overwhelming the user.
+                This project shaped how I think about AI features in general:
+                they should remove friction, not add a new thing to learn.
               </p>
             </div>
           </div>
@@ -1247,7 +1284,7 @@ export default function GoogleCalendarCaseStudy() {
       </section>
 
       {/* View Next Case Study Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto flex justify-center">
             <Link
