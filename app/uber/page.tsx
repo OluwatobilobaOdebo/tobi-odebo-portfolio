@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 export default function UberCaseStudy() {
@@ -210,6 +211,17 @@ export default function UberCaseStudy() {
             >
               Problem Space
             </h2>
+
+            {/* Problem Space Diagram */}
+            <div className="mb-16 -mx-16 md:-mx-32 lg:-mx-64">
+              <Image
+                src="/uber_problem_space_spaghetti_diagram.jpg"
+                alt="Uber Problem Space Spaghetti Diagram"
+                width={1600}
+                height={1200}
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
 
             {/* Problem Identification */}
             <div className="mb-16">
@@ -437,7 +449,7 @@ export default function UberCaseStudy() {
       </section>
 
       {/* Hypotheses Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Hypotheses Title */}
@@ -518,6 +530,49 @@ export default function UberCaseStudy() {
                   Notes API infrastructure supports adding a summarization layer
                   without major backend rearchitecture for V1.
                 </p>
+
+                {/* Rejected Placements */}
+                <div className="grid md:grid-cols-2 gap-8 mt-8">
+                  <div>
+                    <Image
+                      src="/uber_too_late_rejected.jpg"
+                      alt="Too Late Placement - Rejected"
+                      width={600}
+                      height={450}
+                      className="w-full h-auto rounded-lg"
+                    />
+                    <p className="text-center text-[#4a4a4a] mt-2 text-sm">
+                      Too Late: Showing during navigation was distracting
+                    </p>
+                  </div>
+                  <div>
+                    <Image
+                      src="/uber_too_hidden_rejected.jpg"
+                      alt="Too Hidden Placement - Rejected"
+                      width={600}
+                      height={450}
+                      className="w-full h-auto rounded-lg"
+                    />
+                    <p className="text-center text-[#4a4a4a] mt-2 text-sm">
+                      Too Hidden: Buried in rider profile had low engagement
+                    </p>
+                  </div>
+                </div>
+
+                {/* Goldilocks Moment */}
+                <div className="mt-8">
+                  <Image
+                    src="/uber_goldilocks_moment.jpg"
+                    alt="The Goldilocks Moment - Right after acceptance"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <p className="text-center text-[#4a4a4a] mt-2 text-sm">
+                    The Goldilocks Moment: Right after acceptance, before
+                    navigation starts
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -567,7 +622,7 @@ export default function UberCaseStudy() {
       </section>
 
       {/* Solution Space Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Solution Space Title */}
@@ -725,12 +780,32 @@ export default function UberCaseStudy() {
                 </p>
               </div>
             </div>
+
+            {/* High Fidelity AI Design */}
+            <div className="mb-16">
+              <div className="group">
+                <div className="-mx-8 md:-mx-16 lg:-mx-24 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                  <Image
+                    src="/uber_high_fid_ai.png"
+                    alt="High fidelity AI-powered driver notes summary interface design"
+                    width={1600}
+                    height={1000}
+                    quality={100}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <p className="mt-4 text-sm text-[#6a6a6a] font-medium">
+                  AI Summary Card — Concise rider context displayed right after
+                  trip acceptance
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Core Features Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Core Features Title */}
@@ -966,7 +1041,7 @@ export default function UberCaseStudy() {
       </section>
 
       {/* Metrics & Success Criteria Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Metrics Title */}
@@ -1147,7 +1222,7 @@ export default function UberCaseStudy() {
       </section>
 
       {/* Roadmap Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Roadmap Title */}
@@ -1293,7 +1368,7 @@ export default function UberCaseStudy() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Impact Title */}
@@ -1404,7 +1479,7 @@ export default function UberCaseStudy() {
       </section>
 
       {/* Reflection Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Reflection Title */}
@@ -1498,7 +1573,7 @@ export default function UberCaseStudy() {
       </section>
 
       {/* View Next Case Study Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto flex justify-center">
             <Link
