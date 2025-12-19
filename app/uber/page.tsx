@@ -90,27 +90,28 @@ export default function UberCaseStudy() {
               </h3>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                According to Uber's 2023 Driver Experience Report, experienced
-                drivers (5+ years) accumulate contextual knowledge about
-                hundreds of repeat riders—preferred pickup spots, communication
-                preferences, accessibility needs. The platform's Notes feature
-                allows drivers to record this information, but usage data
-                reveals a critical gap: while 67% of long-term drivers write
-                notes, only 12% regularly review them before trips.
+                Uber is one of the world's most widely used mobility platforms,
+                connecting millions of riders and drivers across urban and
+                suburban environments every day. The platform is built on
+                real-time coordination, trust between strangers, and a seamless
+                experience that helps riders get where they need to go quickly
+                and safely.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                Uber has invested heavily in optimizing routes and pricing, but
-                the human context—the soft knowledge drivers accumulate over
-                thousands of trips—remains locked in messy, unstructured notes
-                that are rarely surfaced at the right moment. Gate codes,
-                accessibility needs, communication preferences—this information
-                exists, but it's buried.
+                While Uber optimizes routes, pricing, and pickup/dropoff
+                logistics, it offers limited support for a subtle but critical
+                part of the experience: understanding the human context behind
+                each ride. Drivers often leave notes about past experiences with
+                riders—such as preferred pickup locations, gate codes,
+                accessibility needs, communication preferences, or important
+                safety details. However, these notes are scattered,
+                inconsistent, and generally hard for drivers to access or use
+                effectively during future trips.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                Industry research on rideshare driver behavior identifies three
-                distinct patterns in how drivers use note-taking features:
+                Uber's key personas tied to this need include:
               </p>
 
               <ul
@@ -122,17 +123,17 @@ export default function UberCaseStudy() {
                     className="font-bold text-white mb-2"
                     style={{ fontSize: "22px" }}
                   >
-                    High-Volume Note Writers (~30%)
+                    Drivers (Primary Persona)
                   </h4>
                   <p
                     className="leading-relaxed text-white/80"
                     style={{ fontSize: "22px" }}
                   >
-                    These drivers consistently document rider information after
-                    trips, but platform analytics show they rarely access these
-                    notes later. The write-to-read ratio is approximately 8:1,
-                    indicating a retrieval problem rather than a documentation
-                    problem.
+                    Drivers are the frontline operators of the platform. They
+                    want clear, concise, and reliable information that helps
+                    them complete rides efficiently and safely. Today, driver
+                    notes are optional, unstructured, and often lengthy — making
+                    them difficult to parse quickly when starting a trip.
                   </p>
                 </li>
 
@@ -141,17 +142,17 @@ export default function UberCaseStudy() {
                     className="font-bold text-white mb-2"
                     style={{ fontSize: "22px" }}
                   >
-                    Feature Abandoners (~45%)
+                    Riders (Secondary Persona)
                   </h4>
                   <p
                     className="leading-relaxed text-white/80"
                     style={{ fontSize: "22px" }}
                   >
-                    A Rideshare Drivers United survey found that nearly half of
-                    drivers who initially used note features eventually stopped.
-                    The primary reason cited: notes aren't surfaced proactively,
-                    requiring manual navigation that's impractical during active
-                    trips.
+                    Riders expect smooth and consistent service: easy
+                    communication, correct pickup coordination, and personalized
+                    experience. While they don't interact with the notes
+                    directly, the quality and accuracy of driver preparedness
+                    shape the rider's overall perception of the platform.
                   </p>
                 </li>
 
@@ -160,33 +161,34 @@ export default function UberCaseStudy() {
                     className="font-bold text-white mb-2"
                     style={{ fontSize: "22px" }}
                   >
-                    Safety-Focused Users (~25%)
+                    Support & Safety Teams
                   </h4>
                   <p
                     className="leading-relaxed text-white/80"
                     style={{ fontSize: "22px" }}
                   >
-                    Research from the National Safety Council's rideshare study
-                    indicates that drivers who prioritize safety notes want this
-                    information before trip acceptance, not after. Current
-                    platform designs show notes too late in the workflow to
-                    inform decision-making.
+                    Internal teams at Uber often rely on historical trip notes
+                    when resolving disputes, understanding incidents, and
+                    ensuring rider and driver safety. Unstructured or incomplete
+                    notes slow down this process and reduce context accuracy.
                   </p>
                 </li>
               </ul>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                A competitive analysis of Lyft, Bolt, and DiDi reveals similar
-                limitations across the industry. All platforms offer some
-                version of trip history and notes, but none proactively surface
-                this context during the critical pre-pickup window.
+                Uber's competitors — Lyft, Bolt, DiDi — all provide varying
+                degrees of trip history and basic notes, but none offer a
+                centralized, AI-powered system that helps drivers quickly
+                interpret context from past interactions.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                The idea: what if Uber automatically summarized all past driver
-                notes into a 2-3 sentence card that appeared the moment a driver
-                matched with a repeat rider? No digging, no scrolling—just the
-                key context, right when it matters.
+                This creates an opportunity to introduce AI Driver Notes
+                Summary, a feature that automatically summarizes driver-entered
+                notes across past trips into a concise, actionable context card.
+                This summary appears at the start of a new trip, enabling
+                drivers to deliver smoother, more informed rides while reducing
+                cognitive load and improving safety.
               </p>
             </div>
           </div>
