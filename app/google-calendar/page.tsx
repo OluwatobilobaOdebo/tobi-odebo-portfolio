@@ -609,10 +609,10 @@ export default function GoogleCalendarCaseStudy() {
                 </p>
 
                 <p>
-                  But I didn't want to get ahead of ourselves. AI summaries can
-                  be wrong. Surfaced docs might be irrelevant. The first
-                  priority was making sure the basics worked reliably before
-                  pushing it everywhere.
+                  But I didn't want to get ahead of myself. AI summaries can be
+                  wrong. Surfaced docs might be irrelevant. The first priority
+                  was making sure the basics worked reliably before pushing it
+                  everywhere.
                 </p>
 
                 <p>
