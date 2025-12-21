@@ -587,19 +587,20 @@ export default function Home() {
                 title="Natural Language Processing Specialization"
                 provider="DeepLearning.AI"
                 status="Issued Dec 2025"
-                link="https://www.coursera.org/account/accomplishments/specialization/7NOOOZ638CVE"
+                link="https://www.coursera.org/account/accomplishments/specialization/certificate/7NOOOZ638CVE"
                 logo="/deep_learning_ai.jpg"
               />
               <CertificationCard
                 title="Generative AI Leader"
                 provider="Google Cloud"
-                status="In Progress"
+                status="Issued Dec 2025"
+                link="https://www.coursera.org/account/accomplishments/professional-cert/certificate/97AKX5WYR4VB"
                 logo="/google_cloud.jpg"
               />
               <CertificationCard
                 title="IBM AI Product Manager Professional Certificate"
                 provider="IBM / Coursera"
-                status="After completion of Generative AI Leader"
+                status="In Progress"
                 logo="/ibm_logo.png"
               />
             </div>

@@ -90,30 +90,29 @@ export default function TaxCaseStudy() {
               </h3>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                Tax filing is one of the most universally stressful financial
-                activities for individuals and small business owners. The
-                process is often confusing, time-consuming, and filled with
-                uncertainty, especially for users who lack tax knowledge or
-                cannot afford professional assistance. Despite the proliferation
-                of digital tools, most tax software still relies heavily on
-                user-provided information, rigid question trees, and limited
-                contextual understanding — leaving significant room for error
-                and frustration.
+                I've watched friends panic every April. They stare at TurboTax
+                screens asking "What's Box 12?" and Google frantically, never
+                quite sure if they're doing it right. The anxiety isn't about
+                the tax itself — it's the fear of messing up something important
+                and not knowing until it's too late.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                The AI Tax Assistant concept introduces an intelligent,
-                conversational tax companion designed to simplify tax
-                preparation through real-time guidance, document comprehension,
-                personalized recommendations, and automated data classification.
-                By leveraging large language models, OCR, and structured tax
-                rules, the assistant transforms the filing experience from a
-                manual, form-driven process into a proactive, supportive, and
-                transparent workflow.
+                Current tax software hasn't solved this. It just digitized the
+                same confusing forms. You still need to know what to enter and
+                where. If you miss a deduction, too bad — the software won't
+                catch it for you.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                This product serves three core personas:
+                This concept explores what tax prep could look like with AI that
+                actually understands your documents, asks follow-up questions
+                like a good accountant would, and explains things in plain
+                English. Not a smarter form — a genuine assistant.
+              </p>
+
+              <p className="leading-relaxed" style={{ fontSize: "22px" }}>
+                I designed this for three types of people:
               </p>
 
               <ul
@@ -177,19 +176,16 @@ export default function TaxCaseStudy() {
               </ul>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                The competitive landscape includes TurboTax, H&R Block, Cash App
-                Taxes, and AI-enabled fintech tools — but none provide a truly
-                conversational, continuous, zero-to-one tax assistant capable of
-                handling nuance, detecting opportunities, and giving confident
-                explanations in plain language.
+                TurboTax and H&R Block dominate the market, but they're still
+                just fancy form-fillers. They ask you questions — they don't
+                figure things out for you. There's a gap here for something that
+                feels less like software and more like having a friend who
+                happens to be a CPA.
               </p>
 
               <p className="leading-relaxed" style={{ fontSize: "22px" }}>
-                The AI Tax Assistant has the potential to redefine tax
-                preparation by eliminating complexity, reducing errors, and
-                empowering users with real-time financial insight — ultimately
-                reshaping how individuals and small businesses approach tax
-                season.
+                The goal: make tax season feel like a 20-minute task instead of
+                a weekend-long anxiety spiral.
               </p>
             </div>
           </div>
@@ -226,33 +222,28 @@ export default function TaxCaseStudy() {
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
                 <p>
-                  Tax filing is complex, stressful, and time-consuming for most
-                  individuals and small businesses. Users often struggle with:
+                  Most people don't procrastinate on taxes because they're lazy.
+                  They procrastinate because the process feels like a trap — one
+                  wrong number and you might get audited, or miss out on money
+                  you're owed.
                 </p>
 
                 <ul className="space-y-2 ml-6 text-[#4a4a4a]">
-                  <li>Understanding tax terminology</li>
-                  <li>Entering the correct information</li>
-                  <li>Classifying income and expenses</li>
-                  <li>Identifying deduction opportunities</li>
-                  <li>Avoiding costly mistakes</li>
-                  <li>Managing paperwork across the year</li>
-                  <li>
-                    Waiting until the last minute due to anxiety or confusion
-                  </li>
+                  <li>"What does Box 14 mean?"</li>
+                  <li>"Am I supposed to have a 1099 from that side gig?"</li>
+                  <li>"Can I write off my home office or not?"</li>
+                  <li>"Why is my refund less than last year?"</li>
                 </ul>
 
                 <p>
-                  Existing tax tools are rigid, form-based, and reactive. They
-                  rely heavily on the user to know what to input, offering
-                  limited personalization or real-time guidance.
+                  Today's tax software expects you to already know the answers.
+                  It doesn't help you figure things out — it just asks you to
+                  fill in blanks.
                 </p>
 
                 <p className="font-semibold">
-                  There is a strong opportunity for an intelligent,
-                  conversational assistant that reduces friction, increases
-                  accuracy, and supports users year-round—not just during tax
-                  season.
+                  What if the software could actually read your W-2, understand
+                  what it says, and explain what it means for you?
                 </p>
               </div>
             </div>
@@ -311,22 +302,20 @@ export default function TaxCaseStudy() {
                 className="space-y-6 text-[#1a1a1a]"
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
-                <p>Users want to:</p>
+                <p>What people actually say they want:</p>
                 <ul className="space-y-2 ml-6 text-[#4a4a4a]">
-                  <li>Understand their tax situation without jargon</li>
-                  <li>Categorize expenses with minimal effort</li>
-                  <li>Upload receipts and documents easily</li>
-                  <li>Ensure their filing is accurate and optimized</li>
-                  <li>Know exactly why a deduction applies</li>
+                  <li>"Just tell me what I owe or what I'm getting back"</li>
+                  <li>"Don't make me Google every other question"</li>
                   <li>
-                    Receive help throughout the year, not just at filing time
+                    "I took a photo of the receipt — why do I have to type it
+                    in?"
                   </li>
-                  <li>Reduce anxiety around audits and mistakes</li>
+                  <li>"Am I missing something? How would I even know?"</li>
                 </ul>
 
                 <p className="font-semibold mt-6 text-center text-lg">
-                  Underlying goal: "Help me file my taxes correctly,
-                  confidently, and with minimal stress."
+                  The real ask: "I want to feel like someone who knows what
+                  they're doing checked my work."
                 </p>
               </div>
             </div>
@@ -344,32 +333,25 @@ export default function TaxCaseStudy() {
                 className="space-y-6 text-[#1a1a1a]"
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
-                <p>The AI Tax Assistant provides:</p>
+                <p>What this does differently:</p>
                 <ul className="space-y-2 ml-6 text-[#4a4a4a]">
                   <li>
-                    Conversational guidance that simplifies complex tax rules
+                    You upload a W-2, it reads the numbers for you — no typing
                   </li>
                   <li>
-                    Automatic data extraction from W-2s, 1099s, receipts, bank
-                    statements
+                    You ask "can I write this off?" and get a straight answer,
+                    not a link to an IRS page
                   </li>
                   <li>
-                    Smart expense categorization for gig workers and small
-                    businesses
+                    It notices patterns ("you drove 8,000 miles for work —
+                    that's a $4,800 deduction")
                   </li>
-                  <li>
-                    Real-time deduction insights tailored to the user's behavior
-                  </li>
-                  <li>Year-round tax coaching, not just filing support</li>
-                  <li>
-                    Explanation-focused design, so users understand why
-                    something matters
-                  </li>
+                  <li>It tells you what things mean, not just what to enter</li>
                 </ul>
 
                 <p className="font-semibold mt-6 text-center text-lg">
-                  Value: A fast, accurate, stress-free tax filing experience
-                  accessible to everyone.
+                  The goal: finish your taxes feeling like you understood what
+                  happened.
                 </p>
               </div>
             </div>
@@ -551,15 +533,16 @@ export default function TaxCaseStudy() {
                 className="space-y-6 text-[#1a1a1a]"
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
+                <p>How we'd know it's working:</p>
                 <ul className="space-y-2 ml-6 text-[#4a4a4a]">
                   <li>
-                    High activation rate for document upload & categorization
+                    Average filing time under 25 minutes (vs. 3+ hours industry
+                    avg)
                   </li>
-                  <li>Reduction in filing time for all user types</li>
-                  <li>Increased confidence scores from user surveys</li>
-                  <li>Decrease in manual corrections made by users</li>
-                  <li>Year-over-year subscription retention</li>
-                  <li>Higher deduction capture rate vs. baseline tools</li>
+                  <li>80%+ of users upload at least one document</li>
+                  <li>Users find $200+ more in deductions vs. DIY</li>
+                  <li>NPS above 50 (TurboTax is around 20)</li>
+                  <li>People come back next year without a promo code</li>
                 </ul>
               </div>
             </div>
@@ -589,32 +572,24 @@ export default function TaxCaseStudy() {
                 className="font-bold uppercase tracking-[0.2em] text-[#1a1a1a] mb-6"
                 style={{ fontSize: "14px", letterSpacing: "0.2em" }}
               >
-                1. DOCUMENT INTAKE & UNDERSTANDING
+                1. "I GOT MY W-2, NOW WHAT?"
               </h3>
 
               <div
                 className="space-y-6 text-[#1a1a1a]"
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
-                <p className="font-semibold">
-                  Use Case: Auto-Extract Tax Data From Uploaded Documents
+                <p>
+                  User snaps a photo of their W-2. The AI reads it, pulls out
+                  the numbers, and says: "Got it — you earned $67,400 at Acme
+                  Corp, and they withheld $8,200 in federal taxes. Looking good
+                  so far."
                 </p>
                 <p>
-                  <span className="font-semibold">User Action:</span> Upload
-                  W-2, 1099, receipts, or bank statements
-                </p>
-                <p>
-                  <span className="font-semibold">AI Behavior:</span>
-                </p>
-                <ul className="space-y-2 ml-6 text-[#4a4a4a]">
-                  <li>Performs OCR</li>
-                  <li>Extracts relevant fields</li>
-                  <li>Maps data to correct tax form sections</li>
-                  <li>Flags missing information</li>
-                </ul>
-                <p>
-                  <span className="font-semibold">Outcome:</span> User avoids
-                  manual data entry and reduces risk of errors.
+                  No typing. No squinting at Box 12 codes. If something's
+                  missing, the AI asks for it specifically: "I don't see state
+                  income here — did you work in a state with no income tax, or
+                  is there another page?"
                 </p>
               </div>
             </div>
@@ -625,36 +600,24 @@ export default function TaxCaseStudy() {
                 className="font-bold uppercase tracking-[0.2em] text-[#1a1a1a] mb-6"
                 style={{ fontSize: "14px", letterSpacing: "0.2em" }}
               >
-                2. YEAR-ROUND EXPENSE TRACKING
+                2. "WHERE DID ALL MY MONEY GO?"
               </h3>
 
               <div
                 className="space-y-6 text-[#1a1a1a]"
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
-                <p className="font-semibold">
-                  Use Case: Categorize Expenses Automatically for Self-Employed
-                  Workers
+                <p>
+                  Freelancer connects their bank account. The AI scans
+                  transactions and starts sorting: "Looks like you spent $340 at
+                  Staples and $89 at Best Buy — office supplies? And these 47
+                  Uber rides... were those for work or personal?"
                 </p>
                 <p>
-                  <span className="font-semibold">User Action:</span> Connects
-                  bank account or uploads monthly transactions
-                </p>
-                <p>
-                  <span className="font-semibold">AI Behavior:</span>
-                </p>
-                <ul className="space-y-2 ml-6 text-[#4a4a4a]">
-                  <li>Classifies expenses into tax categories</li>
-                  <li>Suggests deductions</li>
-                  <li>Identifies potential write-offs</li>
-                  <li>
-                    Highlights patterns (e.g., "You spent $812 on equipment this
-                    quarter")
-                  </li>
-                </ul>
-                <p>
-                  <span className="font-semibold">Outcome:</span> Filing becomes
-                  easier and more accurate at year-end.
+                  Instead of digging through 12 months of statements in April,
+                  everything's already organized. The AI even catches things you
+                  forgot: "You paid $1,200 for that online course in March —
+                  that's probably deductible as professional development."
                 </p>
               </div>
             </div>
@@ -665,36 +628,25 @@ export default function TaxCaseStudy() {
                 className="font-bold uppercase tracking-[0.2em] text-[#1a1a1a] mb-6"
                 style={{ fontSize: "14px", letterSpacing: "0.2em" }}
               >
-                3. REAL-TIME TAX COACHING
+                3. "CAN I WRITE THIS OFF?"
               </h3>
 
               <div
                 className="space-y-6 text-[#1a1a1a]"
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
-                <p className="font-semibold">
-                  Use Case: Ask Conversational Questions Anytime
+                <p>
+                  User asks: "I bought a laptop for work but sometimes my kids
+                  use it. Can I still deduct it?"
                 </p>
                 <p>
-                  <span className="font-semibold">User Action:</span> User types
-                  questions like:
+                  AI responds: "Yes, but only the portion used for work. If you
+                  use it 70% for business, you can deduct 70% of the cost. Based
+                  on the $1,400 you spent at Apple in September, that'd be about
+                  $980."
                 </p>
-                <ul className="space-y-2 ml-6 text-[#4a4a4a]">
-                  <li>"Can I deduct my home office?"</li>
-                  <li>"How do quarterly taxes work?"</li>
-                  <li>"What business expenses qualify?"</li>
-                </ul>
                 <p>
-                  <span className="font-semibold">AI Behavior:</span>
-                </p>
-                <ul className="space-y-2 ml-6 text-[#4a4a4a]">
-                  <li>Gives IRS-compliant explanations</li>
-                  <li>Provides examples</li>
-                  <li>Links insights to the user's specific situation</li>
-                </ul>
-                <p>
-                  <span className="font-semibold">Outcome:</span> Users gain
-                  clarity instantly instead of Googling or guessing.
+                  No more Googling "laptop tax deduction reddit" at midnight.
                 </p>
               </div>
             </div>
@@ -705,34 +657,23 @@ export default function TaxCaseStudy() {
                 className="font-bold uppercase tracking-[0.2em] text-[#1a1a1a] mb-6"
                 style={{ fontSize: "14px", letterSpacing: "0.2em" }}
               >
-                4. PERSONALIZED DEDUCTION GUIDANCE
+                4. "AM I MISSING ANYTHING?"
               </h3>
 
               <div
                 className="space-y-6 text-[#1a1a1a]"
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
-                <p className="font-semibold">
-                  Use Case: Identify Missed or Underutilized Deductions
+                <p>
+                  Before you file, the AI does a final check: "I noticed you
+                  work from home but didn't claim a home office deduction. Your
+                  apartment is 850 sq ft and your desk area is about 100 sq ft —
+                  that's a $600 deduction you're leaving on the table. Want to
+                  add it?"
                 </p>
                 <p>
-                  <span className="font-semibold">User Action:</span> User
-                  reviews a checklist generated by the AI
-                </p>
-                <p>
-                  <span className="font-semibold">AI Behavior:</span>
-                </p>
-                <ul className="space-y-2 ml-6 text-[#4a4a4a]">
-                  <li>
-                    Compares user profile to typical profiles with similar
-                    income/occupation
-                  </li>
-                  <li>Flags likely missed deductions</li>
-                  <li>Explains eligibility in simple language</li>
-                </ul>
-                <p>
-                  <span className="font-semibold">Outcome:</span> Users maximize
-                  refunds or reduce taxes owed.
+                  It's not just filling in forms. It's actively looking out for
+                  you.
                 </p>
               </div>
             </div>
@@ -821,8 +762,8 @@ export default function TaxCaseStudy() {
                 </div>
 
                 <p className="italic text-emerald-700 mt-6 text-lg font-medium">
-                  "I just don't want to feel like I'm guessing on half the
-                  questions."
+                  "I clicked 'not sure' like five times. That can't be good,
+                  right?"
                 </p>
               </div>
             </div>
@@ -895,8 +836,8 @@ export default function TaxCaseStudy() {
                 </div>
 
                 <p className="italic text-emerald-700 mt-6 text-lg font-medium">
-                  "I know I'm leaving money on the table, but tax software
-                  doesn't help me catch things."
+                  "I have receipts everywhere — my email, my photos, a shoebox.
+                  Come tax time, I just guess."
                 </p>
               </div>
             </div>
@@ -934,11 +875,16 @@ export default function TaxCaseStudy() {
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
                 <p>
-                  Tax filing is confusing, time-consuming, and error-prone. Most
-                  tools rely on rigid forms and user knowledge, leading to
-                  missed deductions, incorrect inputs, and high anxiety. Users
-                  need a smarter, conversational assistant that accurately
-                  extracts data, explains tax rules, and reduces manual effort.
+                  People dread tax season not because taxes are hard, but
+                  because the tools make them feel stupid. You upload a W-2 and
+                  still have to manually type in every number. You're asked
+                  about deductions you've never heard of. One wrong checkbox and
+                  you're scared of an audit.
+                </p>
+                <p>
+                  The core problem: tax software treats users like data entry
+                  clerks, not people who need help understanding what's
+                  happening with their money.
                 </p>
               </div>
             </div>
@@ -957,11 +903,18 @@ export default function TaxCaseStudy() {
                 style={{ fontSize: "18px", lineHeight: "1.8" }}
               >
                 <ul className="space-y-2 ml-6 text-[#4a4a4a]">
-                  <li>Simplify tax preparation through AI-driven guidance</li>
-                  <li>Reduce filing time and complexity</li>
-                  <li>Increase accuracy and deduction capture</li>
-                  <li>Provide year-round support, not just seasonal help</li>
-                  <li>Build trust through transparent explanations</li>
+                  <li>Cut filing time from hours to under 30 minutes</li>
+                  <li>
+                    Eliminate "I don't know" clicks — the AI should figure it
+                    out
+                  </li>
+                  <li>
+                    Catch deductions users typically miss (home office, mileage,
+                    equipment)
+                  </li>
+                  <li>
+                    Make users feel confident, not anxious, when they hit submit
+                  </li>
                 </ul>
               </div>
             </div>
@@ -1132,7 +1085,8 @@ export default function TaxCaseStudy() {
                   <li>Federal return generation</li>
                 </ul>
                 <p className="font-semibold mt-4">
-                  Goal: Make simple tax filing fast, accurate, and stress-free.
+                  Goal: A W-2 employee finishes their return in under 20
+                  minutes.
                 </p>
               </div>
             </div>
@@ -1159,7 +1113,7 @@ export default function TaxCaseStudy() {
                   <li>Personalized deduction profiles</li>
                 </ul>
                 <p className="font-semibold mt-4">
-                  Goal: Support 1099 workers with intelligent automation.
+                  Goal: A freelancer stops dreading tax season.
                 </p>
               </div>
             </div>
@@ -1187,7 +1141,8 @@ export default function TaxCaseStudy() {
                   <li>Export for accountants</li>
                 </ul>
                 <p className="font-semibold mt-4">
-                  Goal: Serve complex filers and small businesses.
+                  Goal: A small business owner files without needing an
+                  accountant.
                 </p>
               </div>
             </div>
